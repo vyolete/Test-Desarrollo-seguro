@@ -704,6 +704,566 @@
         correct: "C",
         explanation:
           "Un entero es usado para acceder a un buffer fuera de sus límites. Un integer overflow ocurre cuando el resultado de una operación aritmética no puede ser representado dentro del rango de almacenamiento del tipo de dato entero, lo que puede llevar a accesos fuera de los límites de un buffer."
+      },
+      {
+        id: 45,
+        title: "Pregunta 45",
+        text: "Señalar la respuesta correcta. ¿Qué tipo de vulnerabilidad se comete en este código?\n\n#include <stdlib.h>\n#include <string.h>\nint main(int argc, char *argv[]) {\n  char *return_val = 0;\n  const size_t bufsize = strlen(argv[0]) + 1;\n  char *buf = (char *)malloc(bufsize);\n  if (!buf) {\n    return EXIT_FAILURE;\n  }\n  /* ... */\n  free(buf);\n  /* ... */\n  strcpy(buf, argv[0]);\n  /* ... */\n  return EXIT_SUCCESS;\n}",
+        options: {
+          A: "Format String.",
+          B: "Off by one.",
+          C: "Use after free.",
+          D: "Null pointer reference."
+        },
+        correct: "C",
+        explanation:
+          "Use after free. El buffer se libera mediante free(buf) y luego se intenta usar con strcpy(buf, argv[0]). Esto es un clásico use-after-free vulnerability donde se utiliza memoria que ya ha sido liberada, lo que puede llevar a corrupción de memoria o ejecución de código arbitrario."
+      },
+      {
+        id: 46,
+        title: "Pregunta 46",
+        text: "Señalar la respuesta correcta. El aspecto clave de todo gobierno de TI es:",
+        options: {
+          A: "Que TI entregue valor al negocio y que los riegos sean gestionados.",
+          B: "Que se disminuya el gasto de TI y se optimice los costes.",
+          C: "Que se cumpla con la normativa.",
+          D: "Ninguna de las anteriores."
+        },
+        correct: "A",
+        explanation:
+          "El gobierno de TI debe garantizar que la tecnología de la información entregue valor al negocio mientras se gestionan adecuadamente los riesgos asociados. Este es el equilibrio fundamental entre crear valor y proteger los activos de información."
+      },
+      {
+        id: 47,
+        title: "Pregunta 47",
+        text: "Señalar la respuesta correcta. Dentro de los tipos de auditorías de los sistemas de información y telecomunicaciones nos interesa las auditorías de seguridad. Esta última engloba los dos siguientes tipos:",
+        options: {
+          A: "Auditoría de seguridad operativa/técnica y auditoría de cumplimiento de la seguridad de la información.",
+          B: "Auditoría de seguridad de procedimientos, y auditoría de cumplimiento de la seguridad de la información.",
+          C: "Auditoria de seguridad de sistemas y auditoría de seguridad operativa/técnica.",
+          D: "Auditoría de cumplimiento de la seguridad de la información y auditorías tecnológicas de seguridad."
+        },
+        correct: "A",
+        explanation:
+          "Las auditorías de seguridad se dividen en dos tipos principales: auditoría de seguridad operativa/técnica (evaluación de controles técnicos y operacionales) y auditoría de cumplimiento de la seguridad de la información (verificación del cumplimiento de políticas y normas)."
+      },
+      {
+        id: 48,
+        title: "Pregunta 48",
+        text: "Señalar la respuesta correcta. ¿Qué metodología de auditoria se adapta mejor a las compañías?",
+        options: {
+          A: "Cualquiera que tenga relación con los sistemas de información.",
+          B: "La metodología marcada por entidades reconocidas como ISACA, IAI, etc.",
+          C: "La que sea completa y esté adecuada a las necesidades de la compañía.",
+          D: "Ninguna de las anteriores."
+        },
+        correct: "C",
+        explanation:
+          "La mejor metodología de auditoría es aquella que sea completa y se adapte a las necesidades específicas de la compañía. Mientras que es importante considerar metodologías de entidades reconocidas, la metodología debe ser tailored para la organización específica."
+      },
+      {
+        id: 49,
+        title: "Pregunta 49",
+        text: "Señalar la respuesta correcta. Respecto a los controles de seguridad:",
+        options: {
+          A: "Los controles de seguridad preventivos aportan eficiencia por cuanto reducen la necesidad de realizar intervenciones correctivas ante incidentes de seguridad.",
+          B: "Los controles de seguridad detectivos no son suficientes per se para garantizar niveles de seguridad.",
+          C: "Los controles de seguridad correctivos pueden ser auditados fácilmente mediante la utilización de pruebas sustantivas.",
+          D: "Los controles de seguridad preventivos están diseñados de forma específica para el control de amenazas o grupos de amenazas concretos."
+        },
+        correct: "A",
+        explanation:
+          "Los controles preventivos son más eficientes porque evitan que los incidentes de seguridad ocurran en primer lugar, reduciendo la necesidad de intervenciones correctivas posteriores. Esto es más efectivo que depender únicamente de controles detectivos o correctivos."
+      },
+      {
+        id: 50,
+        title: "Pregunta 50",
+        text: "Señalar la respuesta correcta. En la auditoría informática se deben contemplar:",
+        options: {
+          A: "Solo aspectos técnicos y de gestión.",
+          B: "Solo aspectos técnicos.",
+          C: "Aspectos de planificación y gestión. Los aspectos técnicos no se valoran, pues se asume su funcionamiento.",
+          D: "Cubre todos los aspectos de planificación, gestión y técnicos."
+        },
+        correct: "D",
+        explanation:
+          "Una auditoría informática integral debe cubrir todos los aspectos: planificación (evaluación de estrategias de TI), gestión (procesos y gobernanza) y técnicos (implementación y seguridad). Ninguno de estos aspectos debe ser ignorado en una auditoría completa."
+      },
+      {
+        id: 51,
+        title: "Pregunta 51",
+        text: "Señalar la respuesta correcta. ¿Cuál de los siguientes mecanismos de seguridad protegen de forma más adecuada a las aplicaciones?",
+        options: {
+          A: "Cortafuegos de nueva generación.",
+          B: "Inclusión de prácticas de seguridad en el SDLC.",
+          C: "Sistemas de gestión y correlación de eventos (SIEM).",
+          D: "Sistemas de detección de intrusos."
+        },
+        correct: "B",
+        explanation:
+          "La inclusión de prácticas de seguridad en el ciclo de vida de desarrollo del software (SDLC) es el mecanismo más efectivo para proteger aplicaciones, ya que aborda las vulnerabilidades desde el diseño y desarrollo. Los otros mecanismos son defensas perimetrales o de detección, que son posteriores a la creación del software."
+      },
+      {
+        id: 52,
+        title: "Pregunta 52",
+        text: "Señalar la respuesta correcta. El objetivo del principio de seguridad de menor privilegio es:",
+        options: {
+          A: "Reducir el número de vulnerabilidades en el código fuente de una aplicación.",
+          B: "Limitar el impacto que podría suponer el compromiso de un sistema de información por parte de un atacante.",
+          C: "Ayudar, durante el diseño de una aplicación, a seleccionar la mejor tecnología para la autenticación.",
+          D: "Ninguna de las anteriores."
+        },
+        correct: "B",
+        explanation:
+          "El principio de menor privilegio (least privilege) tiene como objetivo principal limitar el impacto de un posible compromiso. Si un usuario o proceso tiene solo los privilegios necesarios para realizar su función, el daño que un atacante puede causar si compromete esa cuenta se ve significativamente limitado."
+      },
+      {
+        id: 53,
+        title: "Pregunta 53",
+        text: "Señale la respuesta correcta. ¿Cuál de las siguientes fases del ciclo de vida de una vulnerabilidad no lo es?",
+        options: {
+          A: "Verificación inicial de la vulnerabilidad.",
+          B: "Descubrimiento.",
+          C: "Validación final por el usuario.",
+          D: "Solución: los programadores del producto buscan solución en entornos controlados."
+        },
+        correct: "C",
+        explanation:
+          "La validación final por el usuario no es una fase del ciclo de vida de una vulnerabilidad. Las fases correctas son: descubrimiento, verificación inicial, análisis, desarrollo de solución (patch), pruebas, liberación y despliegue. La validación es responsabilidad del proveedor/desarrollador, no del usuario final."
+      },
+      {
+        id: 54,
+        title: "Pregunta 54",
+        text: "Señalar la respuesta incorrecta. Los elementos clave de un proceso de S-SDLC son:",
+        options: {
+          A: "Gestión de configuración versiones.",
+          B: "Pruebas de seguridad.",
+          C: "Despliegue y distribución.",
+          D: "Hitos de control en las fases del SDLC."
+        },
+        correct: "C",
+        explanation:
+          "La opción incorrecta es despliegue y distribución. Los elementos clave de un S-SDLC son: gestión de configuración de versiones, pruebas de seguridad e hitos de control en las fases del SDLC. Despliegue y distribución son operaciones posteriores al desarrollo que no son elementos clave del proceso de desarrollo seguro en sí."
+      },
+      {
+        id: 55,
+        title: "Pregunta 55",
+        text: "Señalar la respuesta incorrecta. Controles de la metodología \"Open Web Application Security Project (OWASP)\":",
+        options: {
+          A: "Autorización.",
+          B: "Gestión de sesiones.",
+          C: "Información clasificada.",
+          D: "Manejo de errores."
+        },
+        correct: "C",
+        explanation:
+          "La opción incorrecta es información clasificada. Los controles de OWASP incluyen: autorización, gestión de sesiones, manejo de errores, validación de entrada, criptografía, entre otros. Información clasificada no es un control específico de la metodología OWASP."
+      },
+      {
+        id: 56,
+        title: "Pregunta 56",
+        text: "Señalar la respuesta correcta. La ISO27001 define a la seguridad informática como:",
+        options: {
+          A: "Característica de un sistema informático que indica si está libre de riesgo, peligro o daño el cual comprende bases de datos, hardware, archivos y todo lo que la organización tenga como un activo y signifique un riesgo si ésta llega a caer a manos de personas que pueden hacer mal uso de los recursos.",
+          B: "Característica de un sistema informático que indica si está libre de riesgo, peligro o daño el cual comprende bases de datos, hardware, software, archivos y todo lo que la organización valore como un activo y signifique un riesgo si ésta llega a caer a manos de personas que pueden hacer mal uso de los recursos.",
+          C: "Un sistema informático que está libre de riesgo, y comprende bases de datos, software, archivos y todo lo que la organización valore como un activo.",
+          D: "Un sistema informático que está libre de riesgo, peligro o daño tanto hardware como software y todo lo que la organización valore y signifique un riesgo si ésta llega a caer a manos de personas que pueden hacer mal uso de los recursos."
+        },
+        correct: "B",
+        explanation:
+          "Según ISO27001, la seguridad informática es una característica que contempla integralmente los sistemas de información, incluyendo bases de datos, hardware, software y archivos. Debe valorar todos los activos de la organización y los riesgos que supone su compromiso por terceros maliciosos."
+      },
+      {
+        id: 57,
+        title: "Pregunta 57",
+        text: "Señalar la respuesta correcta. Una librería que maneja string de forma segura, intentará asegurar lo siguiente:",
+        options: {
+          A: "Las funciones de manejo de cadenas de la biblioteca segura se puede intercambiar sin modificar nada con las funciones de la biblioteca estándar de cadena, y viceversa.",
+          B: "Que las cadenas han sido validadas correctamente.",
+          C: "Que hay espacio suficiente en una cadena de origen y / o destino para realizar operaciones como concatenación, copia, etc.",
+          D: "Ninguna de las anteriores."
+        },
+        correct: "C",
+        explanation:
+          "Una librería segura de manejo de strings debe asegurar que hay espacio suficiente en las cadenas de origen y destino para realizar operaciones de concatenación, copia y otras manipulaciones. Esto previene desbordamientos de buffer y otros vulnerabilidades relacionadas."
+      },
+      {
+        id: 58,
+        title: "Pregunta 58",
+        text: "Señalar la respuesta correcta. ¿Quién clasifica los activos del sistema de información?",
+        options: {
+          A: "La autoridad nacional de seguridad.",
+          B: "Una empresa auditora.",
+          C: "Una empresa consultora.",
+          D: "La propia organización."
+        },
+        correct: "D",
+        explanation:
+          "La propia organización es responsable de clasificar sus activos de información. Es la organización la que mejor conoce el valor y la criticidad de sus activos, y debe asignarles una clasificación de seguridad apropiada basada en su contexto específico."
+      },
+      {
+        id: 59,
+        title: "Pregunta 59",
+        text: "Señalar la respuesta correcta. Un test de intrusión debe tener las siguientes fases:",
+        options: {
+          A: "Análisis de vulnerabilidades. 2. Explotación/Ataque de las vulnerabilidades detectadas. 3. Realización de informe técnico y ejecutivo.",
+          B: "La recopilación de información del sistema a auditar. 2. Análisis de Vulnerabilidades. 3. Realización de informe técnico y ejecutivo.",
+          C: "La recopilación de información del sistema a auditar. 2. Explotación/Ataque de las vulnerabilidades detectadas. 3. Realización de informe técnico y ejecutivo. Entre 1 y 2 se realiza el análisis de vulnerabilidades.",
+          D: "Ninguna de las anteriores."
+        },
+        correct: "C",
+        explanation:
+          "Las fases de un test de intrusión (penetration test) son: recopilación de información, análisis de vulnerabilidades (entre fases 1 y 2), explotación/ataque de vulnerabilidades detectadas, y realización de informe técnico y ejecutivo."
+      },
+      {
+        id: 60,
+        title: "Pregunta 60",
+        text: "Señalar la respuesta correcta. De acuerdo con la metodología \"Common Criteria ISO 15408 (CC)\" el nivel de confianza en el que resultados de las pruebas proporcionan seguridad en la funcionalidad del producto:",
+        options: {
+          A: "EAL1.",
+          B: "EAL3.",
+          C: "EAL2.",
+          D: "EAL5."
+        },
+        correct: "B",
+        explanation:
+          "Según Common Criteria ISO 15408, EAL3 (Evaluation Assurance Level 3) es el nivel donde los resultados de las pruebas proporcionan una seguridad razonable en la funcionalidad del producto. Es un nivel intermedio que equilibra el esfuerzo de pruebas con la confianza en los resultados."
+      },
+      {
+        id: 61,
+        title: "Pregunta 61",
+        text: "Señalar la respuesta correcta. La primera etapa de una auditoría de un Sistema de Información típica es:",
+        options: {
+          A: "Planificación.",
+          B: "Ejecución.",
+          C: "Exploración.",
+          D: "Ninguna de las anteriores."
+        },
+        correct: "A",
+        explanation:
+          "La planificación es la primera etapa de toda auditoría de un Sistema de Información. En esta fase se define el alcance, objetivos, recursos, cronograma y metodología que se utilizará en la auditoría."
+      },
+      {
+        id: 62,
+        title: "Pregunta 62",
+        text: "Señalar la respuesta correcta. Señale cuales de los siguientes controles de seguridad son preventivos:",
+        options: {
+          A: "Generación de logs en los sistemas de información.",
+          B: "Autenticación fuerte en accesos de eBanking.",
+          C: "Disponibilidad de Plan de Copias.",
+          D: "Las opciones a) y b)."
+        },
+        correct: "B",
+        explanation:
+          "La autenticación fuerte es un control preventivo que previene el acceso no autorizado. La generación de logs es un control detectivo (registra eventos después de que ocurren), y un plan de copias es un control correctivo (para recuperación)."
+      },
+      {
+        id: 63,
+        title: "Pregunta 63",
+        text: "Señalar la respuesta correcta. Las aplicaciones basadas en sistemas de Gestión de Base de Datos:",
+        options: {
+          A: "Son siempre seguras.",
+          B: "Pueden hacerse seguras, si se aplican los controles de seguridad adecuados.",
+          C: "Pueden hacerse seguras, si se controlan adecuadamente los permisos del administrador de base de datos, se bastionan y se mantienen adecuadamente.",
+          D: "Son seguras en muy contadas ocasiones."
+        },
+        correct: "C",
+        explanation:
+          "Las aplicaciones basadas en SGBD pueden ser seguras si se implementan controles adecuados, incluyendo control estricto de permisos del administrador de base de datos, bastionamiento (hardening) de la base de datos, y mantenimiento continuo con parches y actualizaciones."
+      },
+      {
+        id: 64,
+        title: "Pregunta 64",
+        text: "Señalar la respuesta correcta. El criterio de auditoría responde a:",
+        options: {
+          A: "Políticas, practicas, procedimientos o requerimientos contra los que el auditor compara la información recopilada.",
+          B: "A vulnerabilidades que pueden existir en los sistemas.",
+          C: "Simplemente a temas financieros.",
+          D: "Se basa en temas medioambientales."
+        },
+        correct: "A",
+        explanation:
+          "El criterio de auditoría son las políticas, prácticas, procedimientos o requerimientos establecidos contra los cuales el auditor compara la información recopilada durante la auditoría. Estos criterios sirven como estándar de medida para evaluar el desempeño del sistema auditado."
+      },
+      {
+        id: 65,
+        title: "Pregunta 65",
+        text: "Señalar la respuesta correcta. ¿Cuáles son las normas profesionales del equipo auditor?",
+        options: {
+          A: "Objetividad, Responsabilidad.",
+          B: "Compromiso Responsabilidad, Equilibrio, Honestidad.",
+          C: "Integridad Objetividad, Confidencialidad.",
+          D: "Todas las anteriores se incluyen dentro de las normas profesionales del equipo auditor."
+        },
+        correct: "D",
+        explanation:
+          "Las normas profesionales de un equipo auditor incluyen: objetividad, responsabilidad, compromiso, equilibrio, honestidad, integridad y confidencialidad. Todas estas características son esenciales para garantizar una auditoría profesional e imparcial."
+      },
+      {
+        id: 66,
+        title: "Pregunta 66",
+        text: "Señalar la respuesta correcta. Un departamento de auditoría interna, ¿de dónde tendría que colgar en el organigrama?",
+        options: {
+          A: "De presidencia.",
+          B: "De seguridad.",
+          C: "De Informática.",
+          D: "De cualquier rama con tal de que se pueda demostrar su independencia en su trabajo y resultados."
+        },
+        correct: "D",
+        explanation:
+          "Lo más importante es que el departamento de auditoría interna demuestre su independencia en su trabajo y resultados, independientemente de a qué rama del organigrama esté adscrito. Aunque tradicionalmente reporta a presidencia o a la junta directiva para garantizar máxima independencia."
+      },
+      {
+        id: 67,
+        title: "Pregunta 67",
+        text: "Señalar la respuesta correcta. Se encargan de hacer de interfaz entre los usuarios y los informáticos. Está compuesto por expertos en una materia, y conocen muy bien el negocio/modelo de datos que manejan. ¿Qué rol es este?",
+        options: {
+          A: "Se encargan de hacer de interfaz entre los usuarios y los informáticos. Está compuesto por expertos en una materia, y conocen muy bien el negocio/modelo de datos que manejan.",
+          B: "Diseña el plan estratégico de la compañía.",
+          C: "Elabora el Plan Director de Informática, que se corresponde con el Plan Estratégico. Puede ser a un año o a dos.",
+          D: "Ninguna de las anteriores."
+        },
+        correct: "A",
+        explanation:
+          "Esta es la descripción del rol de Business Analyst (Analista de Negocio), que actúa como puente entre usuarios y equipo técnico de informática, siendo experto en el dominio de negocio y los datos que maneja la organización."
+      },
+      {
+        id: 68,
+        title: "Pregunta 68",
+        text: "Señalar la respuesta correcta. ¿Qué tipo de vulnerabilidad se comete en este código?\n\nint main(int argc, char* argv[]) {\n  char source[10];\n  strcpy(source, \"0123456789\");\n  char *dest = (char *)malloc(strlen(source));\n  for (int i=1; i <= 11; i++) {\n    dest[i] = source[i];\n  }\n  dest[i] = '\\0';\n  printf(\"dest = %s\", dest);\n}",
+        options: {
+          A: "Off by one.",
+          B: "No finalizar el buffer con el terminador nulo.",
+          C: "Integer Overflow.",
+          D: "Use after free."
+        },
+        correct: "A",
+        explanation:
+          "Es una vulnerabilidad \"Off by one\". El bucle comienza en i=1 en lugar de i=0, lo que causa un acceso fuera de los límites del buffer. Además, se accede a dest[11] cuando dest solo tiene tamaño strlen(source)=10."
+      },
+      {
+        id: 69,
+        title: "Pregunta 69",
+        text: "Señala la respuesta correcta. La siguiente función acepta como parámetro una cadena \"EmployeeNumber\" y dinámicamente crea una petición SQL utilizando los datos no confiables. ¿Contiene la siguiente función una vulnerabilidad de Inyección SQL?\n\npublic void InsertAccountNumber(String EmployeeNumber)\n{\n  // Create a dynamic SQL statement\n  String sqlQuery = \"SELECT * FROM HrTable WHERE Num = @pENum\";\n  SqlParameter pENum = new SqlParamater(\"@pENum\",SqlDbType.NVarChar,150);\n  pENum.Value = EmployeeNumber;\n  SqlComand sqlCmd = new SqlCommand(sqlQuery,\n  new SqlConnection(connectionString));\n  sqlCmd.Parameters.Add(pENum);\n  // Execute the sql command\n  …\n}",
+        options: {
+          A: "La función no contiene una vulnerabilidad de inyección SQL.",
+          B: "La función contiene una vulnerabilidad de inyección SQL porqué la longitud del parámetro \"EmployeeNumber\" puede exceder el tamaño de 150 caracteres.",
+          C: "La función contiene una vulnerabilidad de inyección SQL porqué el parámetro \"EmployeeNumber\" es insertado directamente en la petición SQL.",
+          D: "Ninguna de las anteriores."
+        },
+        correct: "A",
+        explanation:
+          "La función no contiene vulnerabilidad de inyección SQL porque utiliza consultas parametrizadas (SqlParameter). El parámetro se vincula de forma segura a la consulta, no se concatena directamente. Las consultas parametrizadas son la defensa estándar contra inyección SQL."
+      },
+      {
+        id: 70,
+        title: "Pregunta 70",
+        text: "Señalar la respuesta correcta. Cuál fue el primer ataque de desbordamiento de búfer (buffer overflows).",
+        options: {
+          A: "Gusano Morris.",
+          B: "Code Red.",
+          C: "Love Bug.",
+          D: "SQL Slammer."
+        },
+        correct: "A",
+        explanation:
+          "El Gusano Morris (Morris Worm) fue el primer gusano informático importante, lanzado en 1988, que explotaba múltiples vulnerabilidades incluyendo buffer overflows. Este evento marcó la era moderna de la seguridad informática."
+      },
+      {
+        id: 71,
+        title: "Pregunta 71",
+        text: "Señalar la respuesta correcta. Implementar un mecanismo de protección del tipo CAPTCHA es un medio de la defensa contra:",
+        options: {
+          A: "Inyección SQL.",
+          B: "XSS.",
+          C: "CSRF.",
+          D: "Almacenamiento criptográfico inseguro."
+        },
+        correct: "C",
+        explanation:
+          "CAPTCHA es un mecanismo de defensa contra CSRF (Cross-Site Request Forgery). Al requerir que el usuario demuestre que es humano, se previene que scripts maliciosos de sitios externos ejecuten acciones en nombre del usuario sin su conocimiento explícito."
+      },
+      {
+        id: 72,
+        title: "Pregunta 72",
+        text: "Señala la respuesta correcta. Margarita es parte del rol de \"autora\" así como está incluida en el rol de \"aprobador\", permitiéndole aprobar sus propios artículos antes de que sea publicado en el blog de la compañía. Esto viola el principio de:",
+        options: {
+          A: "Mínimo privilegio.",
+          B: "Seguridad por oscuridad.",
+          C: "Economía de mecanismos.",
+          D: "Separación de privilegios."
+        },
+        correct: "D",
+        explanation:
+          "Esto viola el principio de separación de privilegios (separation of duties). Una persona no debe tener autoridad para realizar acciones conflictivas (escribir y aprobar el mismo contenido) ya que elimina los controles de supervisión mutua."
+      },
+      {
+        id: 73,
+        title: "Pregunta 73",
+        text: "Señalar la respuesta correcta. Indicar la fase del ciclo de vida la siguiente vulnerabilidad: \"Los agentes maliciosos desarrollan el exploit adecuado para poder lanzar ataques\".",
+        options: {
+          A: "Descubrimiento.",
+          B: "Búsqueda.",
+          C: "Utilización.",
+          D: "Actualización."
+        },
+        correct: "C",
+        explanation:
+          "La fase de utilización es cuando los agentes maliciosos desarrollan exploits para lanzar ataques aprovechando una vulnerabilidad conocida. Esta es la fase activa donde la vulnerabilidad se convierte en un riesgo real."
+      },
+      {
+        id: 74,
+        title: "Pregunta 74",
+        text: "Señalar la respuesta correcta. ¿Cuál de las siguientes afirmaciones indica un beneficio de el modelado de amenazas?",
+        options: {
+          A: "Ayuda a evitar defensa no consistentes y actuales.",
+          B: "Ayuda a diseñar las defensas del software frente a los ataques más importantes, comunes y costosos.",
+          C: "Ayuda a estudiar los desafíos de diseño que va a tener el software durante su desarrollo.",
+          D: "Todas las anteriores."
+        },
+        correct: "D",
+        explanation:
+          "El modelado de amenazas aporta múltiples beneficios: ayuda a identificar y evitar defensas inconsistentes, permite priorizar defensas contra los ataques más críticos, y facilita la identificación de desafíos de diseño temranamente en el desarrollo."
+      },
+      {
+        id: 75,
+        title: "Pregunta 75",
+        text: "Señalar la respuesta incorrecta. ¿Qué metodología puede llegar a ser un estándar internacional?",
+        options: {
+          A: "The Open Source Security Testing Methodology. Manual (OSSTMM).",
+          B: "Technical Guide to Information Security Testing and Assessment (NIST 800-115).",
+          C: "The Information System Security Assessment Framework (ISSAF).",
+          D: "The Penetration Testing Execution Standard (PTES)."
+        },
+        correct: "A",
+        explanation:
+          "OSSTMM es una metodología de código abierto pero no es un estándar internacional reconocido. NIST 800-115 es un estándar del gobierno de EE.UU., ISSAF e PTES son marcos de trabajo que buscan ser estándares internacionales reconocidos para testing de seguridad."
+      },
+      {
+        id: 76,
+        title: "Pregunta 76",
+        text: "Señalar la respuesta correcta. Las auditorias de cumplimiento son del tipo:",
+        options: {
+          A: "Caja blanca.",
+          B: "Caja negra.",
+          C: "Caja Gris.",
+          D: "Ninguna de las anteriores."
+        },
+        correct: "C",
+        explanation:
+          "Las auditorías de cumplimiento son del tipo caja gris. El auditor tiene conocimiento limitado de los sistemas y procesos, permitiendo evaluar tanto aspectos técnicos como de gobernanza y documentación."
+      },
+      {
+        id: 77,
+        title: "Pregunta 77",
+        text: "Señalar la respuesta incorrecta. Las fuentes de las vulnerabilidades se deben a:",
+        options: {
+          A: "Fallos provenientes de la codificación de los diseños del software realizados.",
+          B: "Fallos provenientes de la cadena de distribución del software.",
+          C: "Los sistemas hardware o software contienen frecuentemente fallos de diseño que pueden ser utilizados para realizar un ataque.",
+          D: "La instalación de software por defecto implica por lo general la instalación de servicios que no se usan, pero que pueden presentar debilidades que comprometan la máquina."
+        },
+        correct: "B",
+        explanation:
+          "La respuesta incorrecta es B. Todos son fuentes válidas de vulnerabilidades excepto \"fallos provenientes de la cadena de distribución del software\" que es una protección, no una fuente de vulnerabilidades."
+      },
+      {
+        id: 78,
+        title: "Pregunta 78",
+        text: "Señalar la respuesta correcta. Durante una auditoría de una empresa que se dedica al comercio electrónico en la modalidad de negocio-a cliente (business-to-customer), el gerente de SI manifiesta que se utilizan las firmas digitales en el establecimiento de sus relaciones comerciales. ¿El auditor debe probar que se usa cuál de lo siguiente?",
+        options: {
+          A: "Un parámetro biométrico, digitalizado y encriptado con la llave pública del cliente.",
+          B: "Un hash de los datos que es transmitido y encriptado con la llave privada del cliente.",
+          C: "Un hash de los datos que es transmitido y encriptado con la llave pública del cliente.",
+          D: "La firma escaneada del cliente, encriptada con la llave pública del cliente."
+        },
+        correct: "B",
+        explanation:
+          "Una firma digital correcta consiste en un hash de los datos que es transmitido y encriptado con la llave privada del firmante (cliente). Esto proporciona autenticidad, no repudio e integridad."
+      },
+      {
+        id: 79,
+        title: "Pregunta 79",
+        text: "Señalar la respuesta correcta. En materia de Planes de Contingencia, y la auditoría de controles de seguridad en esta área, pueden considerarse como controles adecuados:",
+        options: {
+          A: "La existencia de un Plan de Copias.",
+          B: "La realización periódica de pruebas de contingencia.",
+          C: "La documentación de un procedimiento de actuación ante crisis.",
+          D: "Todas las anteriores afirmaciones son ciertas."
+        },
+        correct: "D",
+        explanation:
+          "Todos los elementos mencionados son controles adecuados en materia de Planes de Contingencia: copias de seguridad, pruebas periódicas de contingencia, y documentación de procedimientos de actuación ante crisis."
+      },
+      {
+        id: 80,
+        title: "Pregunta 80",
+        text: "Señalar la respuesta correcta. Según los controles, los más importantes son:",
+        options: {
+          A: "Sin duda los preventivos.",
+          B: "Los más importantes siempre son los detectivos.",
+          C: "Los correctivos son siempre los mejores.",
+          D: "Todos son importantes, siempre dependen del riesgo, amenaza y la compañía."
+        },
+        correct: "D",
+        explanation:
+          "Todos los tipos de controles (preventivos, detectivos y correctivos) son importantes. Su relevancia depende del riesgo específico, las amenazas identificadas y el contexto de la organización."
+      },
+      {
+        id: 81,
+        title: "Pregunta 81",
+        text: "Señalar la respuesta correcta. El plan TIC de una organización, debe:",
+        options: {
+          A: "Estar siempre a la última en aplicaciones (software).",
+          B: "Estar siempre a la última en dispositivos (hardware).",
+          C: "Dar respuesta a las necesidades del negocio expuestas en el plan estratégico de la organización y ser coherente con este.",
+          D: "Ahorrar todo lo posible y enfocar ese presupuesto en seguridad y auditoria."
+        },
+        correct: "C",
+        explanation:
+          "El plan TIC (Tecnología de la Información y Comunicaciones) debe estar alineado con el plan estratégico de la organización, respondiendo a las necesidades del negocio. La tecnología es una herramienta para lograr objetivos empresariales, no un fin en sí misma."
+      },
+      {
+        id: 82,
+        title: "Pregunta 82",
+        text: "Señalar la respuesta correcta. El principal beneficio del análisis estático del código es:",
+        options: {
+          A: "Se puede analizar el comportamiento del código en tiempo de ejecución.",
+          B: "Los fallos de la lógica de negocios son más fácilmente detectables.",
+          C: "El análisis se realiza por personal del equipo de seguridad del software.",
+          D: "Los errores y vulnerabilidades pueden detectarse en una etapa más temprana del ciclo de vida."
+        },
+        correct: "D",
+        explanation:
+          "El principal beneficio del análisis estático es que los errores y vulnerabilidades pueden detectarse tempranamente en el ciclo de vida del desarrollo, lo que reduce costos y facilita la corrección antes del despliegue."
+      },
+      {
+        id: 83,
+        title: "Pregunta 83",
+        text: "Señalar la respuesta correcta. Una validación correcta de la entrada requiere:",
+        options: {
+          A: "Utilizar listas negras, en las cuales el objetivo es casi imposible de identificar todas las cosas que posiblemente podrían ser malas.",
+          B: "Usar una estrategia como la selección indirecta o whitelisting que se enfoca en la identificación de la entrada que se sabe está bien.",
+          C: "Identificar solo las fuentes de entrada importantes del programa; es el interfaz principal de usuario o la conexión de red.",
+          D: "Todas las anteriores."
+        },
+        correct: "B",
+        explanation:
+          "La validación correcta de entrada requiere usar whitelisting (listas blancas), que se enfoca en identificar y aceptar solo la entrada conocida como segura. Las listas negras no son suficientes porque es imposible conocer todas las entradas maliciosas posibles."
+      },
+      {
+        id: 84,
+        title: "Pregunta 84",
+        text: "Señalar la respuesta correcta. ¿Cuál de las siguientes es la menos probable que se identifique con el modelado de casos de abuso?",
+        options: {
+          A: "Condiciones de la carrera.",
+          B: "Actores maliciosos.",
+          C: "Perspectiva del atacante.",
+          D: "Requisitos negativos."
+        },
+        correct: "A",
+        explanation:
+          "Las condiciones de carrera (race conditions) son menos probables de identificarse con el modelado de casos de abuso. El modelado de abuso se enfoca en actores maliciosos, perspectiva de atacantes y requisitos negativos, mientras que las race conditions son problemas de sincronización de bajo nivel."
       }
     ];
 

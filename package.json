@@ -1,0 +1,25 @@
+{
+  "name": "quiz-desarrollo-seguro",
+  "version": "2.0.0",
+  "description": "Quiz interactivo de Seguridad de Software con 85 preguntas",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "seguridad",
+    "software",
+    "quiz",
+    "ciberseguridad"
+  ],
+  "author": "Desarrollo Seguro",
+  "license": "MIT",
+  "engines": {
+    "node": "18.x"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {}
+}

@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Cuestionario Ciberseguridad Web - 132 Preguntas</title>
+  <title>Cuestionario Ciberseguridad Web - 220 Preguntas</title>
   <style>
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -82,7 +82,7 @@
   </style>
 </head>
 <body>
-  <h1>Cuestionario de Ciberseguridad Web - 132 Preguntas</h1>
+  <h1>Cuestionario de Ciberseguridad Web - 220 Preguntas</h1>
   <div class="quiz-container" id="quiz"></div>
 
   <script>
@@ -384,15 +384,6 @@
           "El código del ejemplo se utiliza una búsqueda de DNS para determinar si una petición de entrada es desde un host de confianza. Si los atacantes envenenan la caché de DNS, pueden obtener el estatus de confianza. Hay otro problema también confía en las solicitudes procedentes del dominio do_not_trustme.com"
       },
       {
-        id: 22,
-        title: "Pregunta 22",
-        text: "Señala la respuesta correcta. ¿Qué tipo de vulnerabilidad se comete en este código?\n\nstruct hostent *hp;\nstruct in_addr myaddr;\nchar* tHost = \"trustme.com\";\nmyaddr.s_addr = inet_addr(ip_addr_string);\nhp = gethostbyaddr((char *) &myaddr, sizeof(struct in_addr), AF_INET);\nif (hp && !strncmp(hp->h_name, tHost, sizeof(tHost))) {\n  trusted = true;\n} else {\n  trusted = false;\n}",
-        options: {
-          A: "Buffer overflow.",
-          B: "Validación límites de confianza.",
-          C: "Validación de entrada DNS.",
-          D: "Memory leaks."
-        },
         correct: "C",
         explanation:
           "El código del ejemplo se utiliza una búsqueda de DNS para determinar si una petición de entrada es desde un host de confianza. Si los atacantes envenenan la caché de DNS, pueden obtener el estatus de confianza. Hay otro problema también confía en las solicitudes procedentes del dominio do_not_trustme.com"
@@ -704,7 +695,7 @@
         correct: "C",
         explanation:
           "Un entero es usado para acceder a un buffer fuera de sus límites. Un integer overflow ocurre cuando el resultado de una operación aritmética no puede ser representado dentro del rango de almacenamiento del tipo de dato entero, lo que puede llevar a accesos fuera de los límites de un buffer."
-      },
+        },
       {
         id: 45,
         title: "Pregunta 45",
@@ -1280,15 +1271,6 @@
           "La opción D (Ninguna de las anteriores) es la correcta porque las tres primeras afirmaciones (A, B y C) son todas incorrectas según los principios de ISO 27001 para sistemas de gestión de seguridad de la información (SGSI). La opción A es incompleta porque la revisión debe ser de responsabilidad de la Alta Dirección. La opción B es falsa porque la mejora continua del SGSI es responsabilidad específica de la dirección, no de cualquier recurso. La opción C es parcialmente correcta pero incompleta ya que, aunque hay un mínimo de 1 vez al año, las revisiones deben estar bien planificadas y documentadas según ISO 27001."
       },
       {
-        id: 86,
-        title: "Pregunta 86",
-        text: "Señalar la respuesta correcta. ¿Cuál de las siguientes afirmaciones es incorrecta?",
-        options: {
-          A: "La revisión por la dirección permitirá realinear los esfuerzos de implantación del SGSI para asegurar su eficiencia y eficacia.",
-          B: "La mejora continua del SGSI se desempeña por cualquiera de los recursos de la organización.",
-          C: "La revisión de la dirección debe realizarse a intervalos planificados y como mínimo 1 vez al año.",
-          D: "Ninguna de las anteriores."
-        },
         correct: "B",
         explanation:
           "La afirmación es incorrecta (y por tanto la respuesta buscada) porque la mejora continua del SGSI es un proceso estructurado y gestionado, no desempeñado arbitrariamente por 'cualquiera' de los recursos sin dirección o asignación específica."
@@ -1322,15 +1304,6 @@
           "El control interno busca el cumplimiento (compliance) tanto de normativas internas como de requisitos legales externos."
       },
       {
-        id: 89,
-        title: "Pregunta 89",
-        text: "Señalar la respuesta correcta. ¿Quién clasifica los activos del sistema de información?",
-        options: {
-          A: "La autoridad nacional de seguridad.",
-          B: "Una empresa auditora.",
-          C: "Una empresa consultora.",
-          D: "La propia organización."
-        },
         correct: "D",
         explanation:
           "La responsabilidad final de la clasificación de la información y los activos recae siempre sobre la propia organización (propietarios de los activos)."
@@ -1546,15 +1519,6 @@
           "Una metodología de auditoría eficaz debe ser sistemática (pasos ordenados), disciplinada y asegurar la objetividad en los resultados."
       },
       {
-        id: 105,
-        title: "Pregunta 105",
-        text: "Señalar la respuesta correcta. ¿Qué metodología de auditoria se adapta mejor a las compañías?",
-        options: {
-          A: "Cualquiera que tenga relación con los sistemas de información.",
-          B: "La metodología marcada por entidades reconocidas como IAI, ISACA...",
-          C: "La que sea completa y este adecuada las necesidades de la compañía.",
-          D: "Ninguna de las anteriores."
-        },
         correct: "C",
         explanation:
           "Aunque los estándares (ISACA) son vitales, la 'mejor' metodología siempre es aquella que se adapta al contexto, tamaño y riesgos específicos de la organización."
@@ -1936,6 +1900,1479 @@
         correct: "B",
         explanation:
           "La Alineación Estratégica entre TI y el Negocio es el objetivo primordial del Gobierno de TI y la principal responsabilidad del CIO para asegurar que TI aporta valor."
+      },
+      {
+        id: 133,
+        title: "Pregunta 133",
+        text: "Señalar la respuesta incorrecta. Unas pruebas de seguridad son consideradas Open Source Security Testing Methodology Manual (OSSTMM) si es:",
+        options: {
+          A: "Válido más allá del período de tiempo «actual».",
+          B: "Basado en el mérito del testador y analista, y no en marcas comerciales.",
+          C: "Exhaustivo.",
+          D: "Concordante con leyes internacionales."
+        },
+        correct: "A",
+        explanation:
+          "OSSTMM no es válida \"para siempre\"; debe evolucionar con la tecnología y las amenazas. Las otras opciones sí describen características propias de OSSTMM."
+      },
+      {
+        id: 134,
+        title: "Pregunta 134",
+        text: "Señalar la respuesta incorrecta. Entre los tipos de auditorías técnicas de seguridad tenemos:",
+        options: {
+          A: "Auditorías de seguridad internas.",
+          B: "Auditorías de redes WIFI.",
+          C: "Auditorías de aplicaciones Web.",
+          D: "Ninguna de las anteriores."
+        },
+        correct: "D",
+        explanation:
+          "Las opciones A, B y C sí son auditorías técnicas, por lo tanto \"ninguna\" es falsa."
+      },
+      {
+        id: 135,
+        title: "Pregunta 135",
+        text: "Señalar la respuesta correcta. Una distinción entre prueba de cumplimiento y prueba sustantiva es que la prueba de cumplimiento prueba:",
+        options: {
+          A: "Detalles, mientras que la sustantiva prueba procedimientos.",
+          B: "Controles, mientras que la sustantiva prueba los detalles.",
+          C: "Planeación, mientras que la sustantiva prueba procedimientos.",
+          D: "Requerimientos regulatorios, mientras que la sustantiva prueba validaciones."
+        },
+        correct: "B",
+        explanation:
+          "La prueba de cumplimiento se orienta a verificar controles; la prueba sustantiva se centra en evidencias y detalles específicos."
+      },
+      {
+        id: 136,
+        title: "Pregunta 136",
+        text: "Señalar la respuesta correcta. Un auditor revisa logs de un día y detecta un fallo puntual. ¿Qué debería hacer?",
+        options: {
+          A: "Emitir un hallazgo.",
+          B: "Solicitar explicación a la gerencia.",
+          C: "Revisar clasificaciones de datos.",
+          D: "Ampliar la muestra de logs revisados."
+        },
+        correct: "D",
+        explanation:
+          "Un solo evento no demuestra un patrón; se debe ampliar la evidencia antes de concluir."
+      },
+      {
+        correct: "C",
+        explanation:
+          "Es la definición clásica de auditoría de SI atribuida a Ron Weber."
+      },
+      {
+        id: 138,
+        title: "Pregunta 138",
+        text: "Señalar la respuesta correcta. En Planes de Contingencia, pueden considerarse controles adecuados:",
+        options: {
+          A: "Existencia de un plan de copias.",
+          B: "Pruebas periódicas de contingencia.",
+          C: "Procedimientos ante crisis.",
+          D: "Todas las anteriores."
+        },
+        correct: "D",
+        explanation:
+          "Un plan de contingencia efectivo requiere los tres elementos."
+      },
+      {
+        id: 139,
+        title: "Pregunta 139",
+        text: "Señalar la respuesta correcta. El desarrollo de software seguro requiere integrar:",
+        options: {
+          A: "Principios de calidad.",
+          B: "Buenas prácticas de diseño.",
+          C: "Principios de diseño seguro y buenas prácticas de seguridad.",
+          D: "Ninguna de las anteriores."
+        },
+        correct: "C",
+        explanation:
+          "Describe el Secure SDLC: integrar principios de diseño seguro y buenas prácticas de seguridad a lo largo del ciclo."
+      },
+      {
+        id: 140,
+        title: "Pregunta 140",
+        text: "Señalar la respuesta correcta. Software que resiste ataques y se recupera sin violar la política exhibe:",
+        options: {
+          A: "Fiabilidad.",
+          B: "Resiliencia.",
+          C: "Recuperación.",
+          D: "Robustez."
+        },
+        correct: "B",
+        explanation:
+          "Resiliencia es la capacidad de resistir ataques y recuperarse manteniendo los objetivos y políticas."
+      },
+      {
+        id: 141,
+        title: "Pregunta 141",
+        text: "Señalar la respuesta incorrecta. Errores comunes del principio de mínimo privilegio:",
+        options: {
+          A: "Aplicación con derechos de administrador.",
+          B: "Usuarios con derechos de administrador.",
+          C: "Instalación con usuario administrador.",
+          D: "Servicios con privilegios por tiempo definido."
+        },
+        correct: "D",
+        explanation:
+          "Privilegios por tiempo definido es una buena práctica, no un error; los demás ejemplos violan mínimo privilegio."
+      },
+      {
+        id: 142,
+        title: "Pregunta 142",
+        text: "Señalar la respuesta correcta. Un ataque de desbordamiento de búfer ocurre cuando:",
+        options: {
+          A: "Copia un búfer de pila a heap.",
+          B: "Se escribe en memoria ya liberada.",
+          C: "El búfer no está lleno.",
+          D: "Un puntero accede a memoria que no le corresponde."
+        },
+        correct: "D",
+        explanation:
+          "El desbordamiento se produce al acceder o escribir fuera de los límites asignados, típicamente por un puntero que apunta donde no debe."
+      },
+      {
+        id: 143,
+        title: "Pregunta 143",
+        text: "Señalar la respuesta correcta. Un auditor de SI que realiza una revisión de controles de acceso debería estar MENOS preocupado si:",
+        options: {
+          A: "Las pistas de auditoría no estuvieran habilitadas.",
+          B: "Los programadores tuvieran acceso al entorno en vivo.",
+          C: "Los logons de grupo estuvieran siendo utilizados para funciones críticas.",
+          D: "El mismo usuario pudiera iniciar transacciones y también cambiar los parámetros relacionados."
+        },
+        correct: "C",
+        explanation:
+          "El uso de cuentas de grupo dificulta la trazabilidad, pero es menos grave que no tener auditoría, permitir acceso a producción a desarrolladores o romper segregación de funciones."
+      },
+      {
+        id: 144,
+        title: "Pregunta 144",
+        text: "Señalar la respuesta correcta. ¿En qué consiste el control de organización y operación: separación de entornos?",
+        options: {
+          A: "En hacer copias de seguridad de los diferentes entornos.",
+          B: "En tener siempre solo 2 entornos: desarrollo y producción.",
+          C: "En tener 3 o 4 entornos: desarrollo, testing, preproducción y explotación.",
+          D: "En tener solo 2 entornos donde la información se intercambia indistintamente."
+        },
+        correct: "C",
+        explanation:
+          "La buena práctica exige separar claramente los entornos (desarrollo, pruebas, preproducción, producción) para evitar errores, fugas y accesos indebidos."
+      },
+      {
+        id: 145,
+        title: "Pregunta 145",
+        text: "Señalar la respuesta incorrecta. Los requisitos de los servicios de seguridad deben especificar:",
+        options: {
+          A: "Propiedades que el software debe exhibir.",
+          B: "Nivel requerido de seguridad y salvaguardas de riesgo.",
+          C: "Controles y normas de los procesos de desarrollo, implementación y operación.",
+          D: "Reducción o eliminación de vulnerabilidades (validación de entradas, límites de búfer, entornos aislados)."
+        },
+        correct: "D",
+        explanation:
+          "La reducción o eliminación de vulnerabilidades es un objetivo o consecuencia de aplicar requisitos y controles; los requisitos deben definir propiedades, niveles y controles."
+      },
+      {
+        id: 146,
+        title: "Pregunta 146",
+        text: "Señalar la respuesta correcta. ¿Qué tipo de vulnerabilidad se comete en el siguiente código? (confía en el nombre DNS devuelto por gethostbyaddr para decidir confianza)",
+        options: {
+          A: "Validación de límites de confianza.",
+          B: "Buffer overflow.",
+          C: "Memory leaks.",
+          D: "Validación de entrada DNS."
+        },
+        correct: "A",
+        explanation:
+          "El código confía en DNS como mecanismo de autenticación, lo cual rompe los límites de confianza."
+      },
+      {
+        id: 147,
+        title: "Pregunta 147",
+        text: "Señalar la respuesta incorrecta. Los elementos clave de un proceso S-SDLC son:",
+        options: {
+          A: "Sostenimiento seguro.",
+          B: "Herramientas de apoyo al desarrollo.",
+          C: "Conocimientos de seguridad de los desarrolladores.",
+          D: "Gestión de configuración del entorno de desarrollo."
+        },
+        correct: "D",
+        explanation:
+          "La gestión de configuración es importante, pero no es un elemento clave del S-SDLC como disciplina."
+      },
+      {
+        id: 148,
+        title: "Pregunta 148",
+        text: "Señalar la respuesta incorrecta. Errores comunes al aplicar el principio de mínimo privilegio:",
+        options: {
+          A: "Aplicación con derechos de administrador.",
+          B: "Usuarios con derechos de administrador.",
+          C: "Instalación con usuario administrador.",
+          D: "Servicios con privilegios por tiempo definido."
+        },
+        correct: "D",
+        explanation:
+          "Privilegios por tiempo definido es una buena práctica, no un error; los demás ejemplos violan mínimo privilegio."
+      },
+      {
+        id: 149,
+        title: "Pregunta 149",
+        text: "Señalar la respuesta incorrecta. Factores prácticos que determinan la utilidad de una herramienta de análisis estático:",
+        options: {
+          A: "Equilibrio entre extensión del código y lenguaje.",
+          B: "Falsos positivos y negativos.",
+          C: "Conjunto de errores que comprueba.",
+          D: "Facilidad de uso."
+        },
+        correct: "A",
+        explanation:
+          "Ese “equilibrio” no es un criterio real de utilidad; los otros sí lo son."
+      },
+      {
+        id: 150,
+        title: "Pregunta 150",
+        text: "Señalar la respuesta incorrecta. En IAST se realizan tres tipos de análisis:",
+        options: {
+          A: "Análisis de cobertura.",
+          B: "Análisis de inconsistencias.",
+          C: "Análisis de patrones.",
+          D: "Análisis de frecuencia de espectro."
+        },
+        correct: "D",
+        explanation:
+          "El análisis de frecuencia de espectro no pertenece a IAST; los otros sí."
+      },
+      {
+        id: 151,
+        title: "Pregunta 151",
+        text: "Señalar la respuesta correcta. Evaluar el nivel de entrenamiento y conciencia de personas fuera del equipo DRP corresponde a:",
+        options: {
+          A: "Resiliencia del sistema.",
+          B: "Copias de seguridad.",
+          C: "Integridad del DRP.",
+          D: "Desempeño del personal involucrado."
+        },
+        correct: "D",
+        explanation:
+          "Medir entrenamiento y conciencia es evaluar el desempeño del personal involucrado en el plan."
+      },
+      {
+        id: 152,
+        title: "Pregunta 152",
+        text: "Señalar la respuesta incorrecta. Fases para realizar un DRP:",
+        options: {
+          A: "Alinearlo con el BCP.",
+          B: "Actualizar y mejorar el plan estratégico.",
+          C: "Capacitar y concienciar.",
+          D: "Realizar pruebas."
+        },
+        correct: "B",
+        explanation:
+          "Un DRP se alinea con el BCP, incluye capacitación y pruebas; actualizar el plan estratégico no es una fase del DRP."
+      },
+      {
+        id: 153,
+        title: "Pregunta 153",
+        text: "Señalar la respuesta correcta. ¿Qué incluye la seguridad del software?",
+        options: {
+          A: "Patrones de codificación.",
+          B: "Principios de diseño seguro.",
+          C: "Casos de uso.",
+          D: "Buenas prácticas de codificación."
+        },
+        correct: "B",
+        explanation:
+          "La seguridad del software se fundamenta en principios de diseño seguro."
+      },
+      {
+        id: 154,
+        title: "Pregunta 154",
+        text: "Señalar la respuesta correcta. ¿Qué es un caso de abuso?",
+        options: {
+          A: "Escenario que ilustra fallos de seguridad.",
+          B: "Base de datos del MITRE.",
+          C: "Escenario de funcionalidades de seguridad.",
+          D: "Patrón de diseño."
+        },
+        correct: "A",
+        explanation:
+          "Un caso de abuso describe cómo un sistema puede ser atacado o fallar en seguridad."
+      },
+      {
+        id: 155,
+        title: "Pregunta 155",
+        text: "Señalar la respuesta correcta. Propiedad que permite imputar acciones a su origen:",
+        options: {
+          A: "Robustez.",
+          B: "Resiliencia.",
+          C: "Autenticación.",
+          D: "Trazabilidad."
+        },
+        correct: "D",
+        explanation:
+          "La trazabilidad permite asociar acciones a su origen con registros y evidencias."
+      },
+      {
+        id: 156,
+        title: "Pregunta 156",
+        text: "Señalar la respuesta correcta. Principal problema del análisis estático:",
+        options: {
+          A: "Falsos negativos.",
+          B: "Gran cantidad de defectos.",
+          C: "Reglas de la herramienta.",
+          D: "Falsos positivos."
+        },
+        correct: "D",
+        explanation:
+          "El principal problema práctico del análisis estático es la cantidad de falsos positivos que genera."
+      },
+      {
+        id: 157,
+        title: "Pregunta 157",
+        text: "Señalar la respuesta correcta. ¿La función contiene inyección SQL?",
+        options: {
+          A: "No contiene vulnerabilidad.",
+          B: "Sí, por longitud.",
+          C: "Sí, por insertar sin validar.",
+          D: "Ninguna."
+        },
+        correct: "A",
+        explanation:
+          "Usa consultas parametrizadas, lo que evita SQL Injection."
+      },
+      {
+        id: 158,
+        title: "Pregunta 158",
+        text: "Señalar la respuesta correcta. Utilidad de los Patrones de Ataque en requisitos:",
+        options: {
+          A: "Ejemplos de ataques.",
+          B: "Orientar pruebas.",
+          C: "Seleccionar políticas.",
+          D: "Definir comportamiento ante ataques."
+        },
+        correct: "D",
+        explanation:
+          "Los patrones de ataque ayudan a definir cómo debe comportarse el sistema frente a ataques en los requisitos."
+      },
+      {
+        id: 159,
+        title: "Pregunta 159",
+        text: "Señalar la respuesta correcta. Clasificación de controles internos según su naturaleza:",
+        options: {
+          A: "Detectivos, correctivos y preventivos.",
+          B: "Voluntarios, obligatorios, manuales y automáticos.",
+          C: "Mezcla de todas.",
+          D: "Generales y legales."
+        },
+        correct: "B",
+        explanation:
+          "La clasificación típica por naturaleza incluye voluntarios, obligatorios, manuales y automáticos."
+      },
+      {
+        id: 160,
+        title: "Pregunta 160",
+        text: "Señalar la respuesta correcta. Sobre controles preventivos y detectivos:",
+        options: {
+          A: "Detectivos reducen probabilidad.",
+          B: "Preventivos detectan eventos.",
+          C: "A y B correctas.",
+          D: "A y B incorrectas."
+        },
+        correct: "D",
+        explanation:
+          "Los preventivos reducen probabilidad y los detectivos identifican eventos; por tanto A y B están invertidas."
+      },
+      {
+        id: 161,
+        title: "Pregunta 161",
+        text: "Señalar la respuesta correcta. SGSI con PDCA:",
+        options: {
+          A: "ISO 27001 y 27002.",
+          B: "ISO 27002.",
+          C: "ISO 27001.",
+          D: "Ninguna."
+        },
+        correct: "C",
+        explanation:
+          "La norma ISO 27001 define el ciclo PDCA para un SGSI; 27002 es guía de controles."
+      },
+      {
+        correct: "B",
+        explanation:
+          "La seguridad del software se fundamenta en principios de diseño seguro."
+      },
+      {
+        correct: "A",
+        explanation:
+          "Un caso de abuso describe cómo un sistema puede ser atacado o fallar en seguridad."
+      },
+      {
+        correct: "D",
+        explanation:
+          "La trazabilidad permite asociar acciones a su origen con registros y evidencias."
+      },
+      {
+        correct: "D",
+        explanation:
+          "El principal problema práctico del análisis estático es la cantidad de falsos positivos que genera."
+      },
+      {
+        correct: "A",
+        explanation:
+          "Usa consultas parametrizadas, lo que evita SQL Injection."
+      },
+      {
+        correct: "D",
+        explanation:
+          "Los patrones de ataque ayudan a definir cómo debe comportarse el sistema frente a ataques en los requisitos."
+      },
+      {
+        correct: "B",
+        explanation:
+          "La clasificación típica por naturaleza incluye voluntarios, obligatorios, manuales y automáticos."
+      },
+      {
+        correct: "D",
+        explanation:
+          "Los preventivos reducen probabilidad y los detectivos identifican eventos; por tanto A y B están invertidas."
+      },
+      {
+        correct: "C",
+        explanation:
+          "La norma ISO 27001 define el ciclo PDCA para un SGSI; 27002 es guía de controles."
+      },
+      {
+        id: 171,
+        title: "Pregunta 171",
+        text: "Señalar la respuesta correcta. Primer paso en auditoría basada en riesgos:",
+        options: {
+          A: "Evaluación de riesgos inherentes.",
+          B: "Riesgos de control.",
+          C: "Riesgo de fraude.",
+          D: "Ninguna."
+        },
+        correct: "A",
+        explanation:
+          "La auditoría basada en riesgos inicia con la evaluación de riesgos inherentes."
+      },
+      {
+        id: 172,
+        title: "Pregunta 172",
+        text: "Señalar la respuesta incorrecta. Controles de la metodología Open Web Application Security Project (OWASP):",
+        options: {
+          A: "Autorización.",
+          B: "Gestión de sesiones.",
+          C: "Información clasificada.",
+          D: "Manejo de errores."
+        },
+        correct: "C",
+        explanation:
+          "OWASP se centra en controles técnicos de aplicaciones web; la clasificación de la información es gestión, no un control OWASP."
+      },
+      {
+        id: 173,
+        title: "Pregunta 173",
+        text: "Señalar la respuesta correcta. ¿Cuál de las siguientes NO es una técnica a utilizar en la ejecución de una auditoría?",
+        options: {
+          A: "Entrevistas.",
+          B: "Cuestionarios escritos.",
+          C: "Muestreos.",
+          D: "Simulaciones."
+        },
+        correct: "D",
+        explanation:
+          "Las técnicas clásicas son entrevistas, cuestionarios y muestreos; las simulaciones son propias de pruebas técnicas."
+      },
+      {
+        id: 174,
+        title: "Pregunta 174",
+        text: "Señalar la respuesta correcta. ¿Qué tipo de vulnerabilidad se comete en el siguiente código? (El código comprueba atributos del archivo con fstat y posteriormente lo utiliza)",
+        options: {
+          A: "Format String.",
+          B: "No finalizar el buffer con el terminador nulo.",
+          C: "Integer Overflow.",
+          D: "Condiciones de carrera (TOCTOU)."
+        },
+        correct: "D",
+        explanation:
+          "Entre la comprobación y el uso el archivo puede ser sustituido, creando una condición de carrera Time Of Check–Time Of Use."
+      },
+      {
+        id: 175,
+        title: "Pregunta 175",
+        text: "Señalar la respuesta correcta. Se tienen dos opciones para crear archivos temporales de forma segura, indique una de ellas:",
+        options: {
+          A: "Generar nombres difíciles de adivinar usando un PRNG criptográficamente seguro.",
+          B: "Almacenar archivos temporales en un directorio públicamente accesible.",
+          C: "Almacenar archivos temporales en un directorio públicamente accesible.",
+          D: "Generar nombres difíciles de adivinar usando un generador de números no criptográfico."
+        },
+        correct: "A",
+        explanation:
+          "La creación segura requiere nombres impredecibles generados con PRNG criptográficamente seguro para evitar predicciones y carreras."
+      },
+      {
+        id: 176,
+        title: "Pregunta 176",
+        text: "Señalar la respuesta correcta. ¿Cuál es la línea de código que puede producir un desbordamiento de búfer?",
+        options: {
+          A: "sprintf(out, \"argument %d is %s\\n\", argc-1, argv[argc-1]);",
+          B: "printf(msg);",
+          C: "strncat(buf,out,sizeof(buf)-len-1);",
+          D: "len = strlen(buf);"
+        },
+        correct: "A",
+        explanation:
+          "sprintf no controla límites y puede escribir más allá del búfer destino."
+      },
+      {
+        id: 177,
+        title: "Pregunta 177",
+        text: "Señalar la respuesta correcta. Los lenguajes seguros deben proporcionar propiedades que aseguren el respeto de los límites de asignación:",
+        options: {
+          A: "Seguridad de accesos a disco.",
+          B: "Seguridad de algoritmos.",
+          C: "Seguridad de memoria.",
+          D: "Seguridad ciclomática."
+        },
+        correct: "C",
+        explanation:
+          "La seguridad de memoria evita accesos fuera de los límites asignados."
+      },
+      {
+        id: 178,
+        title: "Pregunta 178",
+        text: "Señalar la respuesta correcta. ¿Qué medida puede usarse para implementar Defensa en Profundidad en la capa física/perimetral?",
+        options: {
+          A: "Mecanismos de cifrado.",
+          B: "Sandboxes.",
+          C: "SIEM.",
+          D: "Cortafuegos, proxy reverso e IDS/IPS."
+        },
+        correct: "D",
+        explanation:
+          "En la capa perimetral se despliegan múltiples barreras como firewalls, proxies e IDS/IPS."
+      },
+      {
+        correct: "A",
+        explanation:
+          "Un caso de abuso describe cómo un atacante puede explotar el sistema."
+      },
+      {
+        id: 180,
+        title: "Pregunta 180",
+        text: "Señalar la práctica de seguridad correspondiente. “Constituyen otra forma de representar la mentalidad del atacante en base a la descripción del comportamiento del sistema bajo un ataque”.",
+        options: {
+          A: "Test de penetración.",
+          B: "Revisión de código.",
+          C: "Casos de abuso.",
+          D: "Principios de diseño."
+        },
+        correct: "C",
+        explanation:
+          "Los casos de abuso modelan explícitamente la perspectiva del atacante."
+      },
+      {
+        id: 181,
+        title: "Pregunta 181",
+        text: "Señalar la respuesta incorrecta. El cálculo del código CVSS se realiza en base a tres tipos de métricas:",
+        options: {
+          A: "Métricas base.",
+          B: "Métricas estadísticas.",
+          C: "Métricas temporales.",
+          D: "Métricas ambientales."
+        },
+        correct: "B",
+        explanation:
+          "CVSS se compone de métricas Base, Temporales y Ambientales; no existen métricas estadísticas."
+      },
+      {
+        id: 182,
+        title: "Pregunta 182",
+        text: "Señalar la respuesta correcta. ¿Qué tipo de vulnerabilidad se comete en este código? (se libera buf y luego se usa de nuevo)",
+        options: {
+          A: "Format String.",
+          B: "Off by one.",
+          C: "Use after free.",
+          D: "Null pointer reference."
+        },
+        correct: "C",
+        explanation:
+          "Se libera con free(buf) y luego se usa con strcpy, lo que constituye un use-after-free."
+      },
+      {
+        correct: "A",
+        explanation:
+          "El Gobierno de TI busca alinear TI con el negocio, asegurando entrega de valor y gestión adecuada de riesgos."
+      },
+      {
+        id: 184,
+        title: "Pregunta 184",
+        text: "Señalar la respuesta correcta. Dentro de las auditorías de seguridad de los sistemas de información, se distinguen dos tipos principales:",
+        options: {
+          A: "Auditoría de seguridad operativa/técnica y auditoría de cumplimiento de la seguridad de la información.",
+          B: "Auditoría de seguridad de procedimientos y auditoría de cumplimiento.",
+          C: "Auditoría de seguridad de sistemas y auditoría operativa/técnica.",
+          D: "Auditoría de cumplimiento y auditorías tecnológicas de seguridad."
+        },
+        correct: "A",
+        explanation:
+          "La división clásica es seguridad operativa/técnica y auditoría de cumplimiento de la seguridad de la información."
+      },
+      {
+        id: 185,
+        title: "Pregunta 185",
+        text: "Señalar la respuesta correcta. ¿Qué metodología de auditoría se adapta mejor a las compañías?",
+        options: {
+          A: "Cualquiera relacionada con sistemas de información.",
+          B: "La marcada por entidades reconocidas como ISACA.",
+          C: "La que sea completa y esté adecuada a las necesidades de la compañía.",
+          D: "Ninguna de las anteriores."
+        },
+        correct: "C",
+        explanation:
+          "No hay una metodología única; debe ajustarse al contexto, riesgos y necesidades de la empresa."
+      },
+      {
+        correct: "A",
+        explanation:
+          "Los controles preventivos evitan incidentes y reducen costes de corrección, aportando eficiencia."
+      },
+      {
+        correct: "D",
+        explanation:
+          "Una auditoría integral evalúa planificación, gestión y aspectos técnicos."
+      },
+      {
+        id: 188,
+        title: "Pregunta 188",
+        text: "Señalar la respuesta correcta. ¿Qué mecanismo protege de forma más adecuada a las aplicaciones?",
+        options: {
+          A: "Cortafuegos de nueva generación.",
+          B: "Inclusión de prácticas de seguridad en el SDLC.",
+          C: "SIEM.",
+          D: "Sistemas de detección de intrusos."
+        },
+        correct: "B",
+        explanation:
+          "Integrar seguridad en el SDLC previene vulnerabilidades desde el diseño."
+      },
+      {
+        id: 189,
+        title: "Pregunta 189",
+        text: "Señalar la respuesta correcta. El objetivo del principio de menor privilegio es:",
+        options: {
+          A: "Reducir vulnerabilidades en el código fuente.",
+          B: "Limitar el impacto del compromiso de un sistema por un atacante.",
+          C: "Seleccionar la mejor tecnología de autenticación.",
+          D: "Ninguna de las anteriores."
+        },
+        correct: "B",
+        explanation:
+          "Limita el daño potencial si una cuenta o proceso es comprometido."
+      },
+      {
+        id: 190,
+        title: "Pregunta 190",
+        text: "Señalar la respuesta correcta. ¿Cuál de las siguientes no es una fase del ciclo de vida de una vulnerabilidad?",
+        options: {
+          A: "Verificación inicial de la vulnerabilidad.",
+          B: "Descubrimiento.",
+          C: "Validación final por el usuario.",
+          D: "Desarrollo de la solución en entornos controlados."
+        },
+        correct: "C",
+        explanation:
+          "El ciclo incluye descubrimiento, verificación, solución y despliegue; no contempla una validación final del usuario."
+      },
+      {
+        correct: "C",
+        explanation:
+          "El despliegue es una fase del SDLC, pero los elementos clave del Secure SDLC son controles, pruebas y gestión de seguridad."
+      },
+      {
+        id: 192,
+        title: "Pregunta 192",
+        text: "Señalar la respuesta correcta. Las excepciones tienen dos versiones, cuya diferencia tiene que ver con si el compilador usará análisis estático para asegurar que la excepción es manejada:",
+        options: {
+          A: "Comprobadas y no comprobadas. Controladas y no controladas.",
+          B: "Controladas y no controladas.",
+          C: "Valores de retorno.",
+          D: "Ninguna de las anteriores."
+        },
+        correct: "A",
+        explanation:
+          "En lenguajes como Java, las excepciones se clasifican en comprobadas (checked) y no comprobadas (unchecked), verificadas o no por el compilador."
+      },
+      {
+        correct: "D",
+        explanation:
+          "Por comportamiento se clasifican en preventivos, detectivos y correctivos; ninguna opción coincide."
+      },
+      {
+        id: 194,
+        title: "Pregunta 194",
+        text: "Señalar la respuesta correcta. La ISO 27001 define la seguridad informática como:",
+        options: {
+          A: "Característica de un sistema que comprende bases de datos y hardware.",
+          B: "Característica de un sistema que comprende bases de datos, hardware, software, archivos y todo activo valorado por la organización.",
+          C: "Sistema libre de riesgo que comprende bases de datos y software.",
+          D: "Sistema libre de riesgo de hardware y software."
+        },
+        correct: "B",
+        explanation:
+          "ISO 27001 protege todos los activos de información que la organización valore: datos, hardware, software, archivos, etc."
+      },
+      {
+        id: 195,
+        title: "Pregunta 195",
+        text: "Señalar la respuesta correcta. ¿Cuál de las siguientes afirmaciones es cierta?",
+        options: {
+          A: "El plan estratégico depende del plan de TI.",
+          B: "Las organizaciones que consideran las TI obtienen mayor retorno de inversión conforme aumenta su madurez tecnológica.",
+          C: "El plan de TI no debe corresponderse con el plan estratégico.",
+          D: "Ninguna es cierta."
+        },
+        correct: "B",
+        explanation:
+          "La alineación de TI con el negocio y la madurez tecnológica incrementan el retorno de inversión."
+      },
+      {
+        id: 196,
+        title: "Pregunta 196",
+        text: "Señalar la respuesta correcta. Al revisar la seguridad de acceso lógico, ¿qué sería de mayor preocupación para el auditor?",
+        options: {
+          A: "Las contraseñas no son compartidas.",
+          B: "Los archivos de contraseñas están encriptados.",
+          C: "Los logon IDs redundantes son eliminados.",
+          D: "La asignación de logon IDs está controlada."
+        },
+        correct: "D",
+        explanation:
+          "Si la asignación de identidades no está controlada, todo el sistema de acceso lógico queda comprometido."
+      },
+      {
+        id: 197,
+        title: "Pregunta 197",
+        text: "Señalar la respuesta incorrecta. El alcance de la metodología OWISAM incluye:",
+        options: {
+          A: "Fingerprinting.",
+          B: "Pruebas de infraestructura.",
+          C: "Pruebas de directivas y normativa.",
+          D: "Servicios Web."
+        },
+        correct: "D",
+        explanation:
+          "OWISAM se centra en seguridad inalámbrica; los servicios web quedan fuera de su alcance."
+      },
+      {
+        id: 198,
+        title: "Pregunta 198",
+        text: "Señalar la respuesta correcta. ¿Cuál de las siguientes no es una evidencia de auditoría?",
+        options: {
+          A: "Entrevistas a empleados.",
+          B: "Documentación interna.",
+          C: "Resultados de procedimientos de pruebas.",
+          D: "Resultados de una prueba técnica de seguridad."
+        },
+        correct: "D",
+        explanation:
+          "Las evidencias formales incluyen entrevistas, documentación y pruebas planificadas; una prueba técnica aislada no basta."
+      },
+      {
+        id: 199,
+        title: "Pregunta 199",
+        text: "Señalar la respuesta incorrecta. En términos de activos de sistemas de información, distinguimos:",
+        options: {
+          A: "Humanware.",
+          B: "Software.",
+          C: "Hardware.",
+          D: "Activos."
+        },
+        correct: "D",
+        explanation:
+          "\"Activos\" es el término general; las categorías son hardware, software, humanware, datos, etc."
+      },
+      {
+        id: 200,
+        title: "Pregunta 200",
+        text: "Señalar la respuesta correcta. El Gobierno de TI se puede definir como:",
+        options: {
+          A: "Alineamiento estratégico para maximizar valor sin gestión de riesgos.",
+          B: "Alineamiento estratégico para maximizar valor incluyendo gestión de riesgos de TI.",
+          C: "Liderar estructuras de TI de forma autónoma a la dirección.",
+          D: "Ninguna."
+        },
+        correct: "B",
+        explanation:
+          "Gobierno de TI integra alineamiento estratégico, entrega de valor y gestión de riesgos."
+      },
+      {
+        id: 201,
+        title: "Pregunta 201",
+        text: "Señalar la respuesta correcta. ¿Qué auditorías tienen mayor probabilidad de causar conflicto con el personal afectado?",
+        options: {
+          A: "Internas.",
+          B: "Externas.",
+          C: "Ninguna.",
+          D: "Todas."
+        },
+        correct: "A",
+        explanation:
+          "Las auditorías internas suelen generar más fricción al evaluar a compañeros y procesos propios."
+      },
+      {
+        correct: "D",
+        explanation:
+          "Las normas incluyen integridad, objetividad, confidencialidad, responsabilidad, honestidad y compromiso; la opción que las agrupa es la correcta."
+      },
+      {
+        id: 203,
+        title: "Pregunta 203",
+        text: "Señalar la respuesta correcta. Un departamento de auditoría interna, ¿de dónde debería colgar en el organigrama?",
+        options: {
+          A: "De presidencia.",
+          B: "De seguridad.",
+          C: "De informática.",
+          D: "De cualquier rama siempre que se demuestre su independencia."
+        },
+        correct: "A",
+        explanation:
+          "Para garantizar independencia y objetividad debe depender de la máxima dirección."
+      },
+      {
+        id: 204,
+        title: "Pregunta 204",
+        text: "Señalar la respuesta correcta. Se encargan de hacer de interfaz entre los usuarios y los informáticos. Están compuestos por expertos en una materia y conocen muy bien el negocio y el modelo de datos.",
+        options: {
+          A: "Se encargan de hacer de interfaz entre los usuarios y los informáticos. Está compuesto por expertos en una materia y conocen muy bien el negocio/modelo de datos que manejan.",
+          B: "Diseña el plan estratégico de la compañía.",
+          C: "Elabora el Plan Director de Informática alineado con el Plan Estratégico.",
+          D: "Ninguna de las anteriores."
+        },
+        correct: "A",
+        explanation:
+          "La descripción corresponde a analistas funcionales o expertos de negocio que actúan como puente."
+      },
+      {
+        id: 205,
+        title: "Pregunta 205",
+        text: "Señalar la respuesta correcta. ¿Qué tipo de vulnerabilidad se comete en el siguiente código? (bucle con i <= 11 y malloc insuficiente)",
+        options: {
+          A: "Off by one.",
+          B: "No finalizar el buffer con el terminador nulo.",
+          C: "Integer Overflow.",
+          D: "Use after free."
+        },
+        correct: "A",
+        explanation:
+          "El bucle copia un byte de más y el tamaño asignado es insuficiente: un caso típico de off-by-one/buffer overflow."
+      },
+      {
+        id: 206,
+        title: "Pregunta 206",
+        text: "Señalar la respuesta correcta. ¿La siguiente función contiene una vulnerabilidad de Inyección SQL? (Uso de consulta parametrizada con SqlParameter)",
+        options: {
+          A: "La función no contiene una vulnerabilidad de inyección SQL.",
+          B: "Contiene inyección SQL por exceso de longitud.",
+          C: "Contiene inyección SQL por insertar directamente el parámetro.",
+          D: "Ninguna de las anteriores."
+        },
+        correct: "A",
+        explanation:
+          "El uso de parámetros preparados mitiga adecuadamente la inyección SQL."
+      },
+      {
+        id: 207,
+        title: "Pregunta 207",
+        text: "Señalar la respuesta correcta. ¿Cuál fue el primer ataque de desbordamiento de búfer conocido?",
+        options: {
+          A: "Gusano Morris.",
+          B: "Code Red.",
+          C: "Love Bug.",
+          D: "SQL Slammer."
+        },
+        correct: "A",
+        explanation:
+          "El gusano Morris (1988) es el primer ataque ampliamente conocido que explotó buffer overflows."
+      },
+      {
+        id: 208,
+        title: "Pregunta 208",
+        text: "Señalar la respuesta correcta. Implementar un mecanismo CAPTCHA es un medio de defensa contra:",
+        options: {
+          A: "Inyección SQL.",
+          B: "XSS.",
+          C: "CSRF.",
+          D: "Almacenamiento criptográfico inseguro."
+        },
+        correct: "C",
+        explanation:
+          "Un CAPTCHA ayuda a diferenciar humanos de bots y mitiga ataques automatizados como CSRF y abuso de formularios."
+      },
+      {
+        id: 209,
+        title: "Pregunta 209",
+        text: "Señalar la respuesta correcta. Margarita puede crear y aprobar sus propios artículos antes de publicarlos. Esto viola el principio de:",
+        options: {
+          A: "Mínimo privilegio.",
+          B: "Seguridad por oscuridad.",
+          C: "Economía de mecanismos.",
+          D: "Separación de privilegios."
+        },
+        correct: "D",
+        explanation:
+          "Permitir crear y aprobar rompe la separación de funciones/privilegios."
+      },
+      {
+        id: 210,
+        title: "Pregunta 210",
+        text: "Señalar la respuesta correcta. ¿En qué fase del ciclo de vida de una vulnerabilidad los atacantes desarrollan el exploit?",
+        options: {
+          A: "Descubrimiento.",
+          B: "Búsqueda.",
+          C: "Utilización.",
+          D: "Actualización."
+        },
+        correct: "C",
+        explanation:
+          "La fase de utilización corresponde al desarrollo y uso activo del exploit."
+      },
+      {
+        id: 211,
+        title: "Pregunta 211",
+        text: "Señalar la respuesta correcta. ¿Cuál de las siguientes afirmaciones representa un beneficio del modelado de amenazas?",
+        options: {
+          A: "Evita defensas inconsistentes u obsoletas.",
+          B: "Ayuda a diseñar defensas frente a ataques comunes y costosos.",
+          C: "Ayuda a estudiar desafíos de diseño del software.",
+          D: "Todas las anteriores."
+        },
+        correct: "D",
+        explanation:
+          "El modelado de amenazas aporta coherencia defensiva, anticipa ataques y mejora decisiones de diseño."
+      },
+      {
+        correct: "C",
+        explanation:
+          "OWASP cubre controles técnicos de aplicaciones web; la clasificación de la información es un tema de gestión."
+      },
+      {
+        correct: "B",
+        explanation:
+          "La norma protege todos los activos de información que la organización valore."
+      },
+      {
+        id: 214,
+        title: "Pregunta 214",
+        text: "Señalar la respuesta correcta. Una librería que maneja cadenas de forma segura intentará asegurar que:",
+        options: {
+          A: "Las funciones sean intercambiables sin cambios con las estándar.",
+          B: "Las cadenas estén validadas correctamente.",
+          C: "Exista espacio suficiente en la cadena origen/destino para copiar o concatenar.",
+          D: "Ninguna de las anteriores."
+        },
+        correct: "C",
+        explanation:
+          "Una librería segura verifica límites de memoria para evitar desbordamientos al copiar o concatenar."
+      },
+      {
+        correct: "D",
+        explanation:
+          "Solo la organización conoce el valor real de sus activos y debe clasificarlos."
+      },
+      {
+        correct: "C",
+        explanation:
+          "Un pentest completo incluye reconocimiento, análisis de vulnerabilidades, explotación y reporte."
+      },
+      {
+        id: 217,
+        title: "Pregunta 217",
+        text: "Señalar la respuesta correcta. Según Common Criteria ISO 15408, el nivel de confianza en el que los resultados de las pruebas proporcionan seguridad en la funcionalidad del producto es:",
+        options: {
+          A: "EAL1.",
+          B: "EAL3.",
+          C: "EAL2.",
+          D: "EAL5."
+        },
+        correct: "C",
+        explanation:
+          "EAL2 ofrece confianza básica con pruebas que confirman la funcionalidad sin análisis exhaustivo de diseño."
+      },
+      {
+        id: 218,
+        title: "Pregunta 218",
+        text: "Señalar la respuesta correcta. La primera etapa típica de una auditoría de un Sistema de Información es:",
+        options: {
+          A: "Planificación.",
+          B: "Ejecución.",
+          C: "Exploración.",
+          D: "Ninguna de las anteriores."
+        },
+        correct: "A",
+        explanation:
+          "Toda auditoría comienza con la planificación de alcance, objetivos y recursos."
+      },
+      {
+        id: 219,
+        title: "Pregunta 219",
+        text: "Señalar la respuesta correcta. ¿Cuáles de los siguientes controles de seguridad son preventivos?",
+        options: {
+          A: "Generación de logs.",
+          B: "Autenticación fuerte en accesos de eBanking.",
+          C: "Disponibilidad de un Plan de Copias.",
+          D: "Las opciones A y B."
+        },
+        correct: "B",
+        explanation:
+          "La autenticación fuerte previene accesos no autorizados; los logs son detectivos y los planes de copias correctivos."
+      },
+      {
+        id: 220,
+        title: "Pregunta 220",
+        text: "Señalar la respuesta correcta. Las aplicaciones basadas en sistemas de gestión de bases de datos:",
+        options: {
+          A: "Son siempre seguras.",
+          B: "Pueden hacerse seguras aplicando controles adecuados.",
+          C: "Son seguras si solo se controlan los permisos del administrador.",
+          D: "Son seguras en contadas ocasiones."
+        },
+        correct: "B",
+        explanation:
+          "No son seguras por defecto, pero pueden serlo aplicando controles técnicos y organizativos adecuados."
+      },
+      {
+        correct: "A",
+        explanation:
+          "El criterio de auditoría es el marco de referencia (normas, políticas, procedimientos) para evaluar la evidencia."
+      },
+      {
+        correct: "C",
+        explanation:
+          "OWASP cubre controles técnicos web; la clasificación de información pertenece a la gestión y a ISO 27001."
+      },
+      {
+        correct: "B",
+        explanation:
+          "Protege todos los activos de información valorados por la organización."
+      },
+      {
+        id: 224,
+        title: "Pregunta 224",
+        text: "Señalar la respuesta correcta. Una librería que maneja strings de forma segura intentará asegurar que:",
+        options: {
+          A: "Las funciones sean intercambiables sin cambios con la biblioteca estándar.",
+          B: "Las cadenas hayan sido validadas correctamente.",
+          C: "Existe espacio suficiente en la cadena origen y/o destino para copiar o concatenar.",
+          D: "Ninguna de las anteriores."
+        },
+        correct: "C",
+        explanation:
+          "Verifica los límites de las cadenas para evitar desbordamientos al copiar o concatenar."
+      },
+      {
+        correct: "D",
+        explanation:
+          "La organización conoce el valor de sus activos y debe clasificarlos."
+      },
+      {
+        correct: "C",
+        explanation:
+          "Incluye recopilación de información, análisis de vulnerabilidades, explotación y reporte."
+      },
+      {
+        id: 227,
+        title: "Pregunta 227",
+        text: "Señalar la respuesta correcta. Según Common Criteria ISO 15408, el nivel de confianza donde las pruebas proporcionan seguridad en la funcionalidad del producto es:",
+        options: {
+          A: "EAL1",
+          B: "EAL3",
+          C: "EAL2",
+          D: "EAL5"
+        },
+        correct: "C",
+        explanation:
+          "EAL2 ofrece confianza básica basada en pruebas de funcionalidad."
+      },
+      {
+        correct: "A",
+        explanation:
+          "La planificación define alcance, objetivos y metodología."
+      },
+      {
+        id: 229,
+        title: "Pregunta 229",
+        text: "Señalar la respuesta correcta. ¿Cuáles de los siguientes controles son preventivos?",
+        options: {
+          A: "Generación de logs.",
+          B: "Autenticación fuerte en accesos de eBanking.",
+          C: "Disponibilidad de un Plan de Copias.",
+          D: "Las opciones A y B."
+        },
+        correct: "B",
+        explanation:
+          "La autenticación fuerte previene accesos no autorizados; los logs son detectivos y los planes de copias correctivos."
+      },
+      {
+        correct: "B",
+        explanation:
+          "Pueden hacerse seguras aplicando controles técnicos, organizativos y de configuración."
+      },
+      {
+        correct: "A",
+        explanation:
+          "El criterio de auditoría es el marco de referencia (normas, políticas, procedimientos) para evaluar la evidencia."
+      },
+      {
+        correct: "D",
+        explanation:
+          "OSSTMM e ISSAF son metodologías ampliamente usadas y NIST 800-115 es una guía oficial; PTES es consensuada pero no busca ser estándar formal."
+      },
+      {
+        id: 233,
+        title: "Pregunta 233",
+        text: "Señalar la respuesta correcta. Las auditorías de cumplimiento son del tipo:",
+        options: {
+          A: "Caja blanca.",
+          B: "Caja negra.",
+          C: "Caja gris.",
+          D: "Ninguna de las anteriores."
+        },
+        correct: "A",
+        explanation:
+          "Requieren conocimiento total de sistema, políticas y controles, propio de caja blanca."
+      },
+      {
+        correct: "A",
+        explanation:
+          "Las vulnerabilidades provienen de errores de diseño, implementación, configuración, distribución o despliegue; \"codificar diseños\" no es una fuente en sí."
+      },
+      {
+        id: 235,
+        title: "Pregunta 235",
+        text: "Señalar la respuesta correcta. En un entorno B2C donde se usan firmas digitales, ¿qué debe probar el auditor?",
+        options: {
+          A: "Un parámetro biométrico cifrado con la clave pública del cliente.",
+          B: "Un hash de los datos cifrado con la clave privada del cliente.",
+          C: "Un hash de los datos cifrado con la clave pública del cliente.",
+          D: "La firma escaneada del cliente cifrada con su clave pública."
+        },
+        correct: "B",
+        explanation:
+          "La firma digital se genera cifrando el hash con la clave privada del firmante para garantizar autenticidad e integridad."
+      },
+      {
+        id: 236,
+        title: "Pregunta 236",
+        text: "Señalar la respuesta correcta. En materia de Planes de Contingencia, ¿qué controles se consideran adecuados?",
+        options: {
+          A: "Existencia de un Plan de Copias.",
+          B: "Realización periódica de pruebas de contingencia.",
+          C: "Documentación de procedimientos ante crisis.",
+          D: "Todas las anteriores afirmaciones son ciertas."
+        },
+        correct: "D",
+        explanation:
+          "Un plan eficaz debe estar documentado, probado y respaldado por copias de seguridad; todas son correctas."
+      },
+      {
+        correct: "D",
+        explanation:
+          "La prioridad depende del contexto y riesgos; no hay un tipo universalmente más importante."
+      },
+      {
+        id: 238,
+        title: "Pregunta 238",
+        text: "Señalar la respuesta correcta. El plan TIC de una organización debe:",
+        options: {
+          A: "Estar siempre a la última en software.",
+          B: "Estar siempre a la última en hardware.",
+          C: "Dar respuesta a las necesidades del negocio definidas en el plan estratégico.",
+          D: "Ahorrar todo lo posible y enfocarlo en seguridad."
+        },
+        correct: "C",
+        explanation:
+          "Debe alinearse con el plan estratégico del negocio y responder a sus necesidades."
+      },
+      {
+        correct: "D",
+        explanation:
+          "Permite encontrar vulnerabilidades temprano, reduciendo costes y riesgos antes de producción."
+      },
+      {
+        correct: "B",
+        explanation:
+          "La validación segura se basa en listas blancas; las negras no cubren todo lo malicioso."
+      },
+      {
+        id: 241,
+        title: "Pregunta 241",
+        text: "Señalar la respuesta correcta. ¿Cuál es la menos probable de identificar mediante modelado de casos de abuso?",
+        options: {
+          A: "Condiciones de carrera.",
+          B: "Actores maliciosos.",
+          C: "Perspectiva del atacante.",
+          D: "Requisitos negativos."
+        },
+        correct: "A",
+        explanation:
+          "Los casos de abuso se centran en actores e intenciones; las condiciones de carrera se detectan mejor con análisis técnico."
+      },
+      {
+        id: 242,
+        title: "Pregunta 242",
+        text: "Señalar la respuesta incorrecta. Normalmente se suele asignar un usuario general con conjunto de privilegios que le permitirá realizar todas las tareas, incluidas las no necesarias. Ejemplos de errores comunes son:",
+        options: {
+          A: "Instalación de aplicaciones y servicios con el usuario de administrador.",
+          B: "Aplicación de derechos normales.",
+          C: "Usuarios con derechos normales.",
+          D: "Servicios y procesos con privilegios por tiempo definido."
+        },
+        correct: "A",
+        explanation:
+          "Instalar con el usuario administrador concentra privilegios innecesarios; los otros puntos son prácticas más seguras."
+      },
+      {
+        correct: "D",
+        explanation:
+          "Por comportamiento se clasifican en preventivos, detectivos y correctivos; ninguna opción lo refleja."
+      },
+      {
+        id: 244,
+        title: "Pregunta 244",
+        text: "Señala la respuesta correcta. Margarita es parte del rol de “autora” así como está incluida en el rol de “aprobador”, permitiéndole aprobar sus propios artículos antes de que sea publicado en el blog de la compañía. Esto viola el principio de:",
+        options: {
+          A: "Mínimo privilegio.",
+          B: "Seguridad por oscuridad.",
+          C: "Economía de mecanismos.",
+          D: "Separación de privilegios."
+        },
+        correct: "D",
+        explanation:
+          "Permitir crear y aprobar rompe la separación de funciones/privilegios."
+      },
+      {
+        id: 245,
+        title: "Pregunta 245",
+        text: "Señalar la respuesta incorrecta. Respecto a los patrones de ataque:",
+        options: {
+          A: "Ayudan a definir el comportamiento del sistema para prevenir o reaccionar ante un tipo específico de ataque probable.",
+          B: "Especifican debilidades aprovechadas por los ataques, orientando qué técnicas o prácticas de seguridad de desarrollo evitan estas deficiencias.",
+          C: "Proporcionan el contexto del software, de forma que permite diseñarlo correctamente.",
+          D: "Proporcionan ejemplos de ataques que aprovechan las vulnerabilidades de la arquitectura elegida."
+        },
+        correct: "C",
+        explanation:
+          "El contexto del software es parte del diseño/arquitectura; los patrones de ataque se enfocan en ataques, debilidades y mitigaciones."
+      },
+      {
+        id: 246,
+        title: "Pregunta 246",
+        text: "Señalar la respuesta correcta. Recomendaciones de buenas prácticas de implementación:",
+        options: {
+          A: "Manejo de los datos con precaución.",
+          B: "Confiar en software de terceros en operaciones críticas.",
+          C: "Usar listas de errores.",
+          D: "Usar en el código nombres relativos de ficheros."
+        },
+        correct: "A",
+        explanation:
+          "El manejo cuidadoso de los datos es básico; las otras opciones introducen riesgos."
+      },
+      {
+        correct: "A",
+        explanation:
+          "Verifica si se cumplen normas, políticas o estándares establecidos."
+      },
+      {
+        id: 248,
+        title: "Pregunta 248",
+        text: "Señalar la respuesta correcta. De acuerdo con el concepto de visibilidad, las auditorías de seguridad se clasifican en:",
+        options: {
+          A: "Pruebas de caja blanca, negra y gris.",
+          B: "Pruebas de caja blanca y negra.",
+          C: "Pruebas de caja blanca, negra e inversas.",
+          D: "Ninguna de las respuestas."
+        },
+        correct: "A",
+        explanation:
+          "La clasificación estándar por visibilidad es caja blanca, caja negra y caja gris."
+      },
+      {
+        id: 249,
+        title: "Pregunta 249",
+        text: "Señalar la respuesta correcta. La utilización de firmas digitales tiene la ventaja de proporcionar:",
+        options: {
+          A: "Velocidad de las operaciones criptográficas.",
+          B: "Garantía de confidencialidad.",
+          C: "Intercambio de claves.",
+          D: "No rechazo."
+        },
+        correct: "D",
+        explanation:
+          "Las firmas digitales proporcionan no repudio, autenticidad e integridad."
+      },
+      {
+        id: 250,
+        title: "Pregunta 250",
+        text: "Señala la respuesta correcta. El ataque de SQL Injection permite a un agente malicioso realizar lo siguiente:",
+        options: {
+          A: "Acceder a información que no debería.",
+          B: "Desbordar un búfer en la pila.",
+          C: "Usar memoria después de ser liberada.",
+          D: "Todas las respuestas."
+        },
+        correct: "A",
+        explanation:
+          "SQL Injection permite acceso no autorizado a datos; no está relacionado con desbordamientos o use-after-free."
+      },
+      {
+        id: 251,
+        title: "Pregunta 251",
+        text: "Señalar la respuesta incorrecta. Los objetivos de las pruebas de seguridad basadas en el riesgo:",
+        options: {
+          A: "Verificar la operación del software en su entorno de producción.",
+          B: "Verificar la capacidad de supervivencia del software ante anomalías y ataques.",
+          C: "Verificar la falta de defectos y debilidades explotables.",
+          D: "Verificar la fiabilidad del software en términos de comportamiento seguro."
+        },
+        correct: "A",
+        explanation:
+          "El enfoque es sobre resistencia, debilidades y fiabilidad segura, no sobre operación funcional en producción."
+      },
+      {
+        id: 252,
+        title: "Pregunta 252",
+        text: "Señalar la respuesta incorrecta. El análisis estático de código puede ser inadecuado para identificar problemas de seguridad porque:",
+        options: {
+          A: "Analiza todo el código sin priorizar áreas críticas.",
+          B: "Puede identificar causas de problemas, no solo síntomas.",
+          C: "No ayuda a comprobar nuevos ataques en grandes bases de código.",
+          D: "Detecta errores tempranamente."
+        },
+        correct: "C",
+        explanation:
+          "El análisis estático sí puede reutilizarse para buscar nuevos patrones de ataque; la afirmación C es incorrecta."
+      },
+      {
+        id: 253,
+        title: "Pregunta 253",
+        text: "Señalar la respuesta correcta. ¿Cuál es el motivo más importante para revisar periódicamente la planificación de la auditoría?",
+        options: {
+          A: "Considerar los cambios en el entorno de riesgo.",
+          B: "Identificar estándares aplicables.",
+          C: "Revisar recursos.",
+          D: "Ninguna."
+        },
+        correct: "A",
+        explanation:
+          "El riesgo evoluciona y la planificación debe adaptarse continuamente."
+      },
+      {
+        id: 254,
+        title: "Pregunta 254",
+        text: "Señalar la respuesta correcta. ¿Cuál es una recomendación de buenas prácticas?",
+        options: {
+          A: "Manejo de los datos con precaución.",
+          B: "Confiar en software de terceros en operaciones críticas.",
+          C: "No usar listas de comprobación.",
+          D: "Usar nombres relativos de ficheros."
+        },
+        correct: "A",
+        explanation:
+          "El manejo cuidadoso de los datos es una base fundamental de seguridad."
+      },
+      {
+        id: 255,
+        title: "Pregunta 255",
+        text: "Señalar la respuesta incorrecta. Indicar la opción que no es una buena práctica:",
+        options: {
+          A: "Insistir en revisión de código.",
+          B: "Formación continua.",
+          C: "Invocar programas no confiables desde confiables.",
+          D: "Manejo de datos con precaución."
+        },
+        correct: "C",
+        explanation:
+          "Ejecutar software no confiable desde entornos confiables introduce riesgos graves."
+      },
+      {
+        correct: "B",
+        explanation:
+          "Incluye todas las fuentes: naturales, de entorno, defectos y errores humanos accidentales o deliberados."
+      },
+      {
+        id: 257,
+        title: "Pregunta 257",
+        text: "Señalar la respuesta correcta. Auditorías que verifican cumplimiento de normas como PCI-DSS son:",
+        options: {
+          A: "Auditoría operativa/técnica.",
+          B: "Auditoría de cumplimiento de la seguridad de la información.",
+          C: "Auditoría de sistemas.",
+          D: "Auditoría de procedimientos."
+        },
+        correct: "B",
+        explanation:
+          "PCI-DSS es una norma; su verificación corresponde a auditorías de cumplimiento."
+      },
+      {
+        id: 258,
+        title: "Pregunta 258",
+        text: "Señalar la respuesta correcta. La metodología EDR está basada en:",
+        options: {
+          A: "Amenazas",
+          B: "Vulnerabilidades",
+          C: "Riesgos",
+          D: "Impactos"
+        },
+        correct: "C",
+        explanation:
+          "EDR se basa en riesgos para priorizar detección y respuesta."
+      },
+      {
+        id: 259,
+        title: "Pregunta 259",
+        text: "Señalar la respuesta correcta. Generar nombres de archivos temporales difíciles de adivinar usando números aleatorios:",
+        options: {
+          A: "Desborda el buffer por depender del tamaño de la fuente.",
+          B: "Desborda el buffer por mal cálculo del espacio restante.",
+          C: "Deja el buffer sin terminador nulo.",
+          D: "Escribe en posiciones arbitrarias."
+        },
+        correct: "B",
+        explanation:
+          "Una generación incorrecta puede provocar desbordamiento por cálculo erróneo del espacio; la pregunta es ambigua pero la opción indicada es B."
+      },
+      {
+        id: 260,
+        title: "Pregunta 260",
+        text: "Señalar la respuesta correcta. Una perspectiva de las pruebas de seguridad basadas en riesgo es:",
+        options: {
+          A: "Gerencia",
+          B: "Atacante",
+          C: "Usuario",
+          D: "Desarrollador"
+        },
+        correct: "B",
+        explanation:
+          "Las pruebas basadas en riesgo consideran la perspectiva del atacante para priorizar escenarios."
+      },
+      {
+        id: 261,
+        title: "Pregunta 261",
+        text: "Señalar la respuesta correcta. Ante ausencia de procedimientos formales de aprobación, el auditor debe recomendar primero:",
+        options: {
+          A: "Participación de usuarios.",
+          B: "Adoptar y documentar procedimientos formales de aprobación.",
+          C: "Elevar proyectos a gerencia.",
+          D: "Cambiar descripción del puesto."
+        },
+        correct: "B",
+        explanation:
+          "Primero se debe establecer y documentar procedimientos formales de aprobación."
       }
     ];
 

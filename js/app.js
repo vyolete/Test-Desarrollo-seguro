@@ -193,14 +193,32 @@ class VulnerabilityAnalyzerApp {
      * @param {number[]} selectedLines - Currently selected lines
      */
     onSelectionChange(selectedLines) {
-        // Enable/disable verify button based on selection
-        this.elements.verifyButton.disabled = selectedLines.length === 0;
+        const currentQuestion = this.questionManager.getCurrentQuestion();
+        
+        // If no current question, disable button
+        if (!currentQuestion) {
+            this.elements.verifyButton.disabled = true;
+            this.elements.verifyButton.textContent = '🔍 Verificar Respuesta';
+            return;
+        }
+        
+        // Enable verify button if:
+        // 1. Lines are selected, OR
+        // 2. No lines selected but question has no vulnerabilities (secure code)
+        const hasVulnerabilities = currentQuestion.vulnerableLines.length > 0;
+        const shouldEnableButton = selectedLines.length > 0 || !hasVulnerabilities;
+        
+        this.elements.verifyButton.disabled = !shouldEnableButton;
         
         // Update button text
         const count = selectedLines.length;
-        this.elements.verifyButton.textContent = count > 0 
-            ? `🔍 Verificar Respuesta (${count} línea${count !== 1 ? 's' : ''} seleccionada${count !== 1 ? 's' : ''})`
-            : '🔍 Verificar Respuesta';
+        if (count > 0) {
+            this.elements.verifyButton.textContent = `🔍 Verificar Respuesta (${count} línea${count !== 1 ? 's' : ''} seleccionada${count !== 1 ? 's' : ''})`;
+        } else if (!hasVulnerabilities) {
+            this.elements.verifyButton.textContent = '🔍 Verificar Respuesta (Código Seguro)';
+        } else {
+            this.elements.verifyButton.textContent = '🔍 Verificar Respuesta';
+        }
     }
 
     /**
@@ -211,11 +229,14 @@ class VulnerabilityAnalyzerApp {
     onQuestionLoad(question, index) {
         if (!question) return;
         
-        // Reset components for new question
-        this.resetForNewQuestion();
-        
-        // Update question display
+        // Update question display first (this renders the code)
         this.displayQuestion(question);
+        
+        // Use setTimeout to ensure DOM is fully updated before enabling selection
+        setTimeout(() => {
+            // Then reset components for new question (this will work with the new code lines)
+            this.resetForNewQuestion(question);
+        }, 0);
         
         // Update navigation
         this.updateNavigation();
@@ -264,21 +285,35 @@ class VulnerabilityAnalyzerApp {
         // Render code
         this.codeRenderer.renderCode(question.code, question.language);
         
-        // Enable selection
-        this.selectionManager.enableSelection();
-        
-        // Clear feedback
+        // Clear feedback (but don't enable selection here - that's done in resetForNewQuestion)
         this.feedbackSystem.clear();
     }
 
     /**
      * Reset components for new question
+     * @param {Question} question - Current question (optional)
      */
-    resetForNewQuestion() {
+    resetForNewQuestion(question = null) {
+        // Get current question if not provided
+        const currentQuestion = question || this.questionManager.getCurrentQuestion();
+        
+        // Reset selection manager first
         this.selectionManager.reset();
+        
+        // Enable selection for the new question (code should be rendered by now)
+        this.selectionManager.enableSelection();
+        
+        // Clear feedback
         this.feedbackSystem.clear();
-        this.elements.verifyButton.disabled = true;
-        this.elements.verifyButton.textContent = '🔍 Verificar Respuesta';
+        
+        const hasVulnerabilities = currentQuestion && currentQuestion.vulnerableLines.length > 0;
+        
+        // Set initial button state
+        this.elements.verifyButton.disabled = hasVulnerabilities; // Enable for secure code, disable for vulnerable code
+        this.elements.verifyButton.textContent = hasVulnerabilities ? '🔍 Verificar Respuesta' : '🔍 Verificar Respuesta (Código Seguro)';
+        
+        // Trigger onSelectionChange to ensure button state is correct
+        this.onSelectionChange([]);
     }
 
     /**
@@ -289,7 +324,10 @@ class VulnerabilityAnalyzerApp {
         if (!currentQuestion) return;
         
         const selectedLines = this.selectionManager.getSelectedLines();
-        if (selectedLines.length === 0) return;
+        const hasVulnerabilities = currentQuestion.vulnerableLines.length > 0;
+        
+        // Allow verification even with no selection for secure code questions
+        if (selectedLines.length === 0 && hasVulnerabilities) return;
         
         // Validate answer
         const validationResult = this.feedbackSystem.validateAnswer(
@@ -300,8 +338,10 @@ class VulnerabilityAnalyzerApp {
         // Mark selection manager as answered
         this.selectionManager.markAsAnswered();
         
-        // Show visual feedback on code lines
-        this.showCodeLineFeedback(selectedLines, currentQuestion.vulnerableLines);
+        // Show visual feedback on code lines (only if there are vulnerable lines)
+        if (hasVulnerabilities) {
+            this.showCodeLineFeedback(selectedLines, currentQuestion.vulnerableLines);
+        }
         
         // Show detailed feedback
         if (validationResult.type === 'success') {

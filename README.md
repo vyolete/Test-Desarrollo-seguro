@@ -1,7 +1,7 @@
 # Plataforma Educativa de Seguridad de Software
 
 ## Estado Actual
-- **Quiz Teórico**: 219 preguntas de opción múltiple
+- **Quiz Teórico**: 132 preguntas de opción múltiple
 - **Analizador de Código**: 13 ejercicios interactivos de análisis de vulnerabilidades
 - **Estado**: Completamente funcional
 - **Último Update**: 6 de Enero de 2026
@@ -10,7 +10,7 @@
 ## 🎯 Herramientas Educativas
 
 ### 📝 [Quiz de Seguridad de Software](quiz.html)
-Quiz interactivo con **219 preguntas** de opción múltiple sobre ciberseguridad, desarrollo seguro y auditoría de sistemas de información.
+Quiz interactivo con **132 preguntas** de opción múltiple sobre ciberseguridad, desarrollo seguro y auditoría de sistemas de información.
 
 ### 🔍 [Analizador de Vulnerabilidades de Código](vulnerability-analyzer.html) - **NUEVO**
 Herramienta interactiva para **análisis práctico de código** con 13 ejercicios donde los usuarios identifican líneas vulnerables en código real. Incluye explicaciones detalladas y código seguro alternativo.
@@ -99,7 +99,7 @@ Herramienta interactiva para **análisis práctico de código** con 13 ejercicio
 - Herramientas de análisis estático
 - Tests de penetración
 
-### 5. Análisis de Código Seguro (Q35-Q54)
+### 5. Análisis de Código Seguro (Q35-Q85)
 - Limitaciones de herramientas de análisis
 - Errores y excepciones en programación
 - SQL injection y manipulación de información privada
@@ -113,23 +113,7 @@ Herramienta interactiva para **análisis práctico de código** con 13 ejercicio
 - Principio de menor privilegio
 - Separación de privilegios
 
-### 6. Auditoría y Gobernanza (Q55-Q85)
-- Normas profesionales del equipo auditor
-- Independencia de auditoría
-- Metodologías de auditoría (OWASP, ISO27001, Common Criteria)
-- Clasificación de activos
-- Tests de intrusión y fases
-- Controles de seguridad (preventivos, detectivos, correctivos)
-- Planes de contingencia
-- Alineación TIC con estrategia empresarial
-- Análisis estático vs dinámico
-- Validación de entrada y whitelisting
-- Modelado de amenazas
-- Firmas digitales
-- Auditorías de cumplimiento
-- Plan Director de Informática
-
-### 7. Auditoría de Sistemas de Información (Q86-Q132) - **NUEVO**
+### 6. Auditoría de Sistemas de Información (Q86-Q132) - **NUEVO**
 - Sistemas de Gestión de Seguridad de la Información (SGSI)
 - Definiciones de auditoría según Ron Weber
 - Control Interno de Tecnologías de Información (CITI)
@@ -408,7 +392,7 @@ Este proyecto se utiliza con fines educativos en el programa de Máster en "Desa
 - **Documentación Analizador**: [VULNERABILITY-ANALYZER-README.md](VULNERABILITY-ANALYZER-README.md)
 - **Especificaciones Técnicas**: [.kiro/specs/vulnerability-code-analyzer/](.kiro/specs/vulnerability-code-analyzer/)
 - **Última Actualización**: 06/01/2026
-- **Versión**: 4.0 (Quiz: 219 preguntas + Analizador: 13 ejercicios)
+- **Versión**: 4.0 (Quiz: 132 preguntas + Analizador: 13 ejercicios)
 
 ---
 

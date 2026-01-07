@@ -41,7 +41,8 @@ class SelectionManager {
      * Enable line selection functionality
      */
     enableSelection() {
-        if (this.isEnabled) return;
+        // Always disable first to clean up any existing state
+        this.disableSelection();
         
         this.isEnabled = true;
         this.isAnswered = false;
@@ -49,6 +50,7 @@ class SelectionManager {
         
         // Add event listeners to all code lines
         const codeLines = this.container.querySelectorAll('.code-line');
+        
         codeLines.forEach(line => {
             line.addEventListener('click', this.clickHandler);
             line.addEventListener('keydown', this.keyHandler);
@@ -299,10 +301,10 @@ class SelectionManager {
         this.clearFeedbackHighlights();
         this.isAnswered = false;
         
-        // Remove answered state
+        // Remove answered state from all lines
         const codeLines = this.container.querySelectorAll('.code-line');
         codeLines.forEach(line => {
-            line.classList.remove('answered');
+            line.classList.remove('answered', 'selected', 'correct', 'incorrect');
         });
     }
 

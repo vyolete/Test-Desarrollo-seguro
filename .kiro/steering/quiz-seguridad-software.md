@@ -6,7 +6,7 @@ inclusion: always
 
 ## Descripción del Proyecto
 
-Este proyecto es un **quiz interactivo de seguridad de software** desarrollado como herramienta educativa para el programa de Máster en "Desarrollo Seguro". Contiene **219 preguntas** sobre diversos aspectos de la ciberseguridad, desarrollo seguro de software y auditoría de sistemas de información.
+Este proyecto es un **quiz interactivo de seguridad de software** desarrollado como herramienta educativa para el programa de Máster en "Desarrollo Seguro". Contiene **132 preguntas** sobre diversos aspectos de la ciberseguridad, desarrollo seguro de software y auditoría de sistemas de información.
 
 ## Arquitectura del Sistema
 
@@ -31,7 +31,7 @@ Este proyecto es un **quiz interactivo de seguridad de software** desarrollado c
 ## Funcionalidades Principales
 
 ### 1. Quiz Interactivo
-- **219 preguntas** de opción múltiple (A, B, C, D)
+- **132 preguntas** de opción múltiple (A, B, C, D)
 - **Feedback inmediato** al seleccionar respuesta
 - **Explicaciones detalladas** para cada pregunta
 - **Interfaz responsive** y accesible
